@@ -2,7 +2,7 @@ package paquet;
 
 /**
  * iuashdiogasdoygasoyidgasoiydgasiydgaiyd
- * @author alumne
+ * @author Andreu Castell, Joan Serra, Salvador Vicens
  */
 public class Main {
 
