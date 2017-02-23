@@ -1,7 +1,7 @@
 package paquet;
 
 /**
- *
+ * iuashdiogasdoygasoyidgasoiydgasiydgaiyd
  * @author alumne
  */
 public class Main {
