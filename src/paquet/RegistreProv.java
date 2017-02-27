@@ -7,8 +7,8 @@ import java.util.Date;
  * @author Andreu Castell, Joan Serra, Salvador Vicens
  */
 public class RegistreProv {
-    Date dataRegistre;
-    int unitats;
-    int preuProveidor;
-    Jugueta jugueta;
+   private Date dataRegistre;
+   private int unitats;
+   private int preuProveidor;
+   private Jugueta jugueta;
 }

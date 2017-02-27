@@ -5,8 +5,8 @@ package paquet;
  * @author Andreu Castell, Joan Serra, Salvador Vicens
  */
 public class Contacte {
-    String telefon;
-    String email;
-    String zip;
-    String direccio;
+   private String telefon;
+   private String email;
+   private String zip;
+   private String direccio;
 }
