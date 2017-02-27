@@ -70,11 +70,24 @@ public class Jugueta {
     public void setTipus(Tipus tipus) {
         this.tipus = tipus;
     }
-    
-    
-    
+
+    public Jugueta(float preuVentaJugueta, String nomJugueta, String descripcioJugueta, int existencies, Classificacio classificacio, Marca marca, Tipus tipus) {
+        this.preuVentaJugueta = preuVentaJugueta;
+        this.nomJugueta = nomJugueta;
+        this.descripcioJugueta = descripcioJugueta;
+        this.existencies = existencies;
+        this.classificacio = classificacio;
+        this.marca = marca;
+        this.tipus = tipus;
+    }
+
+    @Override
+    public String toString() {
+        return "Jugueta{" + "preuVentaJugueta=" + preuVentaJugueta + ", nomJugueta=" + nomJugueta + ", descripcioJugueta=" + descripcioJugueta + ", existencies=" + existencies + ", classificacio=" + classificacio + ", marca=" + marca + ", tipus=" + tipus + '}';
+    }
+            
     public void juguetaHashSet() {
-        HashSet<Jugueta> Juguetes = new HashSet<>();
+        HashSet<Jugueta> juguetes = new HashSet<>();
         
     }
 }
