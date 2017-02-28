@@ -86,7 +86,7 @@ public class Jugueta {
         return "Jugueta{" + "preuVentaJugueta=" + preuVentaJugueta + ", nomJugueta=" + nomJugueta + ", descripcioJugueta=" + descripcioJugueta + ", existencies=" + existencies + ", classificacio=" + classificacio + ", marca=" + marca + ", tipus=" + tipus + '}';
     }
             
-    public void juguetaHashSet() {
+    public void juguetaHashSet(Marca Nintendo) {
         HashSet<Jugueta> juguetes = new HashSet<>();
         Jugueta NintendoNx = new Jugueta(320, "NintendoNx", "Jugueta molt divertida", 25, Classificacio.C8_12, Nintendo, tipus);
         Jugueta PlayStation5 = new Jugueta(540, "PlayStation5", "Jugueta de derrera generacio", 37, Classificacio.C19, marca, tipus);
@@ -97,4 +97,5 @@ public class Jugueta {
         juguetes.add(CastellPlaymobil);
         
     }
+    
 }
