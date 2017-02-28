@@ -8,11 +8,12 @@ import java.util.HashSet;
  * @author Andreu Castell, Joan Serra, Salvador Vicens
  */
 public class RegistreComp {
-   private Date dataRegistre;
-   private int quantitat;
-   private float preuReg;
-   private int descompte;
-   private Jugueta jugueta;
+
+    private Date dataRegistre;
+    private int quantitat;
+    private float preuReg;
+    private int descompte;
+    private Jugueta jugueta;
 
     public Date getDataRegistre() {
         return dataRegistre;
@@ -61,9 +62,14 @@ public class RegistreComp {
         this.descompte = descompte;
         this.jugueta = jugueta;
     }
-   
-   public void registreCompHashSet() {
+
+    @Override
+    public String toString() {
+        return "RegistreComp{" + "dataRegistre=" + dataRegistre + ", quantitat=" + quantitat + ", preuReg=" + preuReg + ", descompte=" + descompte + ", jugueta=" + jugueta + '}';
+    }
+
+    public void registreCompHashSet() {
         HashSet<RegistreComp> registreComp = new HashSet<>();
-        
-        }
+
+    }
 }
