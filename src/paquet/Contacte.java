@@ -68,5 +68,14 @@ public class Contacte {
     Contacte proveidor2 = new Contacte("971221345", "qwercv@gmail.com", "07179", "C/ ACDC, 44");
     Contacte proveidor3 = new Contacte("971631545", "bvzxcvxc@gmail.com", "07166", "C/ Pollentia, 6");
 
+    contacte.add(marca1);
+    contacte.add(marca2);
+    contacte.add(marca3);
+    contacte.add(comprador1);
+    contacte.add(comprador2);
+    contacte.add(comprador3);
+    contacte.add(proveidor1);
+    contacte.add(proveidor2);
+    contacte.add(proveidor3);
     }
 }

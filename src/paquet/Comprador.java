@@ -45,5 +45,9 @@ public class Comprador {
         Comprador comprador1 = new Comprador("Pere Ramon Vives", registre, contacte);
         Comprador comprador2 = new Comprador("Mateu Perez Munar", registre, contacte);
         Comprador comprador3 = new Comprador("Josep Quetglas Esteve", registre, contacte);
+        
+        comprador.add(comprador1);
+        comprador.add(comprador2);
+        comprador.add(comprador3);
     }
 }
