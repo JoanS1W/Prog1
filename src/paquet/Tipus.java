@@ -4,7 +4,7 @@ import java.util.HashSet;
 
 /**
  *
- * @author Andreu Castell, Joan Serra, Salvador Vicensklsjfksdajflk
+ * @author Andreu Castell, Joan Serra, Salvador Vicens
  */
 public class Tipus {
    private String nomTipus;
