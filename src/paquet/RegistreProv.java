@@ -57,9 +57,4 @@ public class RegistreProv {
     public String toString() {
         return "RegistreProv{" + "dataRegistre=" + dataRegistre + ", unitats=" + unitats + ", preuProveidor=" + preuProveidor + ", jugueta=" + jugueta + '}';
     }
-
-    public void registreCompHashSet() {
-        HashSet<RegistreProv> registreProv = new HashSet<>();
-
-    }
 }
