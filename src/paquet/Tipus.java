@@ -25,15 +25,4 @@ public class Tipus {
     public String toString() {
         return "Tipus{" + "nomTipus=" + nomTipus + '}';
     }
-    
-    public void tipusHashSet(){
-        HashSet<Tipus> tipus = new HashSet<>();
-        Tipus Consola = new Tipus("Consola");
-        Tipus Construir = new Tipus("Construir");
-        Tipus Trencaclosques = new Tipus("Trencaclosques");
-        
-        tipus.add(Consola);
-        tipus.add(Construir);
-        tipus.add(Trencaclosques);
-    }
 }
