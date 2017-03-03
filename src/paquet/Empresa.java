@@ -26,7 +26,6 @@ public class Empresa {
         tipus.add(Trencaclosques);
     }
     
-    
      public void registreProvaHashSet() {
         HashSet<RegistreProv> registreProv = new HashSet<>();
 
