@@ -35,15 +35,4 @@ public class Marca {
     public String toString() {
         return "Marca{" + "nomMarca=" + nomMarca + ", contacte=" + contacte + '}';
     }
-    
-    public void marcaHashSet(){
-        HashSet<Marca> marca = new HashSet<>();
-        Marca Nintendo = new Marca("Nintendo", contacte);
-        Marca Playmobil = new Marca("Playmobil", contacte);
-        Marca Playstation = new Marca("Playstation", contacte);
-         
-        marca.add(Nintendo);
-        marca.add(Playmobil);
-        marca.add(Playstation);
-    }
 }

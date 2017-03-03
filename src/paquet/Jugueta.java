@@ -84,18 +84,5 @@ public class Jugueta {
     @Override
     public String toString() {
         return "Jugueta{" + "preuVentaJugueta=" + preuVentaJugueta + ", nomJugueta=" + nomJugueta + ", descripcioJugueta=" + descripcioJugueta + ", existencies=" + existencies + ", classificacio=" + classificacio + ", marca=" + marca + ", tipus=" + tipus + '}';
-    }
-            
-    public void juguetaHashSet() {
-        HashSet<Jugueta> juguetes = new HashSet<>();
-        Jugueta NintendoNx = new Jugueta(320, "NintendoNx", "Jugueta molt divertida", 25, Classificacio.C8_12, marca, tipus);//nintendo parametre?
-        Jugueta PlayStation5 = new Jugueta(540, "PlayStation5", "Jugueta de derrera generacio", 37, Classificacio.C19, marca, tipus);
-        Jugueta CastellPlaymobil = new Jugueta(125, "CastellPlaymobil", "Jugueta perfecta per nins petits", 14, Classificacio.C4_8, marca, tipus);
-        
-        juguetes.add(NintendoNx);
-        juguetes.add(PlayStation5);
-        juguetes.add(CastellPlaymobil);
-        
-    }
-    
+    }  
 }
