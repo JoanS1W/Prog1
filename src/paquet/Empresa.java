@@ -37,10 +37,7 @@ public class Empresa {
     }
     public void marcaHashSet(){
         HashSet<Marca> marca = new HashSet<>();
-        
-        Contacte marca1 = new Contacte("971548798", "qweq@gmail.com", "07140", "C/ Jardi, 24");
-        Contacte marca2 = new Contacte("971784565", "gdfd@gmail.com", "07142", "C/ Mateu, 12");
-        Contacte marca3 = new Contacte("971013599", "jhgjg@gmail.com", "07113", "C/ Plaça, 48");
+
         
         Marca Nintendo = new Marca("Nintendo", marca1);
         Marca Playmobil = new Marca("Playmobil", marca2);
@@ -64,6 +61,8 @@ public class Empresa {
     }
     public void contacteHashSet(){
         HashSet<Contacte> contacte = new HashSet<>();
+        
+                
         Contacte marca1 = new Contacte("971548798", "qweq@gmail.com", "07140", "C/ Jardi, 24");
         Contacte marca2 = new Contacte("971784565", "gdfd@gmail.com", "07142", "C/ Mateu, 12");
         Contacte marca3 = new Contacte("971013599", "jhgjg@gmail.com", "07113", "C/ Plaça, 48");
