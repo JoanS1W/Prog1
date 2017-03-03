@@ -35,9 +35,10 @@ public class Empresa {
         HashSet<RegistreComp> registreComp = new HashSet<>();
 
     }
-    public void marcaHashSet(){
+    public void marcaHashSet(String nommarca, HashSet<Contacte> contacte){
         HashSet<Marca> marca = new HashSet<>();
-        Marca Nintendo = new Marca("Nintendo", contacte);
+        Contacte marca1 = new Contacte("971548798", "qweq@gmail.com", "07140", "C/ Jardi, 24");
+        Marca Nintendo = new Marca("Nintendo", marca1);
         Marca Playmobil = new Marca("Playmobil", contacte);
         Marca Playstation = new Marca("Playstation", contacte);
          
