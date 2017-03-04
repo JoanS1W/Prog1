@@ -38,4 +38,10 @@ public class Comprador {
         this.registre = registre;
         this.contacte = contacte;
     }
+
+    @Override
+    public String toString() {
+        return "Comprador{" + "nomComprador=" + nomComprador + ", registre=" + registre + ", contacte=" + contacte + '}';
+    }
+    
 }
