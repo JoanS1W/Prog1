@@ -8,12 +8,12 @@ import java.util.Date;
  */
 public class RegistreProv {
 
-    private Date dataRegistre;
+    private String dataRegistre;
     private int unitats;
-    private int preuProveidor;
+    private float preuProveidor;
     private Jugueta jugueta;
 
-    public Date getDataRegistre() {
+    public String getDataRegistre() {
         return dataRegistre;
     }
 
@@ -21,7 +21,7 @@ public class RegistreProv {
         return unitats;
     }
 
-    public int getPreuProveidor() {
+    public float getPreuProveidor() {
         return preuProveidor;
     }
 
@@ -29,7 +29,7 @@ public class RegistreProv {
         return jugueta;
     }
 
-    public void setDataRegistre(Date dataRegistre) {
+    public void setDataRegistre(String dataRegistre) {
         this.dataRegistre = dataRegistre;
     }
 
@@ -45,7 +45,7 @@ public class RegistreProv {
         this.jugueta = jugueta;
     }
 
-    public RegistreProv(Date dataRegistre, int unitats, int preuProveidor, Jugueta jugueta) {
+    public RegistreProv(String dataRegistre, int unitats, float preuProveidor, Jugueta jugueta) {
         this.dataRegistre = dataRegistre;
         this.unitats = unitats;
         this.preuProveidor = preuProveidor;

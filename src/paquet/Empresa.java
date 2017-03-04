@@ -14,7 +14,7 @@ public class Empresa {
     private Contacte marca1, marca2, marca3, comprador1, comprador2, comprador3, proveidor1, proveidor2, proveidor3;
     private Marca Nintendo, Playmobil, Playstation;
     private Tipus Consola, Construir, Trencaclosques;
-    private RegistreProv registreProv;
+    private RegistreProv registreProvA, registreProvB, registreProvC;
      private RegistreComp registreCompA, registreCompB, registreCompC;
 
     public void tipusHashSet() {
@@ -29,9 +29,14 @@ public class Empresa {
         tipus.add(Trencaclosques);
     }
 
-    public void registreProvaHashSet() {
+    public void registreProvHashSet() {
         HashSet<RegistreProv> registreProv = new HashSet<>();
-
+        registreProvA = new RegistreProv("02/04/2017", 3, 12.24f, NintendoNx);
+        registreProvB = new RegistreProv("02/04/2017", 3, 10.34f, PlayStation5);
+        registreProvC = new RegistreProv("02/04/2017", 3, 19.12f, CastellPlaymobil);
+        registreProv.add(registreProvA);
+        registreProv.add(registreProvB);
+        registreProv.add(registreProvC);
     }
 
    public void registreCompHashSet() {
@@ -107,8 +112,8 @@ public class Empresa {
     public void proveidorHashSet() {
         HashSet<Proveidor> proveidor = new HashSet<>();
         
-        proveidorA = new Proveidor("Pep Franxesc de la Vila", Nintendo, proveidor1 ,registreProv);
-        proveidorB = new Proveidor("Juanjo Ramon Catala", Playmobil, proveidor2, registreProv);
-        proveidorC = new Proveidor("Pere Llagosta Narcis", Playstation, proveidor3, registreProv);
+        proveidorA = new Proveidor("Pep Franxesc de la Vila", Nintendo, proveidor1 ,registreProvA);
+        proveidorB = new Proveidor("Juanjo Ramon Catala", Playmobil, proveidor2, registreProvB);
+        proveidorC = new Proveidor("Pere Llagosta Narcis", Playstation, proveidor3, registreProvC);
     }
 }
