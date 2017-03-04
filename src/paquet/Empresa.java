@@ -7,19 +7,19 @@ import java.util.HashSet;
  * @author Andreu Castell, Joan Serra, Salvador Vicens
  */
 public class Empresa {
-   private Jugueta jugueta;
-   private Comprador comprador;
+   private Jugueta NintendoNx, PlayStation5, CastellPlaymobil;
+   private Comprador compradorA, compradorB, compradorC;
    private Proveidor proveidor;
    private Contacte marca1, marca2, marca3, comprador1, comprador2 ,comprador3, proveidor1, proveidor2 ,proveidor3;
-   private Marca marca;
-   private Tipus tipus;
+   private Marca Nintendo, Playmobil, Playstation;
+   private Tipus Consola, Construir, Trencaclosques;
    private RegistreComp registreComp;
    
     public void tipusHashSet(){
         HashSet<Tipus> tipus = new HashSet<>();
-        Tipus Consola = new Tipus("Consola");
-        Tipus Construir = new Tipus("Construir");
-        Tipus Trencaclosques = new Tipus("Trencaclosques");
+        Consola = new Tipus("Consola");
+        Construir = new Tipus("Construir");
+        Trencaclosques = new Tipus("Trencaclosques");
         
         tipus.add(Consola);
         tipus.add(Construir);
@@ -38,9 +38,9 @@ public class Empresa {
     public void marcaHashSet(){
         HashSet<Marca> marca = new HashSet<>();
 
-        Marca Nintendo = new Marca("Nintendo", marca1);
-        Marca Playmobil = new Marca("Playmobil", marca2);
-        Marca Playstation = new Marca("Playstation", marca3);
+        Nintendo = new Marca("Nintendo", marca1);
+        Playmobil = new Marca("Playmobil", marca2);
+        Playstation = new Marca("Playstation", marca3);
         
         marca.add(Nintendo);
         marca.add(Playmobil);
@@ -49,18 +49,17 @@ public class Empresa {
          
     public void juguetaHashSet() {
         HashSet<Jugueta> juguetes = new HashSet<>();
-        Jugueta NintendoNx = new Jugueta(320, "NintendoNx", "Jugueta molt divertida", 25, Classificacio.C8_12, marca, tipus);//nintendo parametre?
-        Jugueta PlayStation5 = new Jugueta(540, "PlayStation5", "Jugueta de derrera generacio", 37, Classificacio.C19, marca, tipus);
-        Jugueta CastellPlaymobil = new Jugueta(125, "CastellPlaymobil", "Jugueta perfecta per nins petits", 14, Classificacio.C4_8, marca, tipus);
+        NintendoNx = new Jugueta(320, "NintendoNx", "Jugueta molt divertida", 25, Classificacio.C8_12, Nintendo, Consola);
+        PlayStation5 = new Jugueta(540, "PlayStation5", "Jugueta de derrera generacio", 37, Classificacio.C19, Playmobil, Consola);
+        CastellPlaymobil = new Jugueta(125, "CastellPlaymobil", "Jugueta perfecta per nins petits", 14, Classificacio.C4_8, Playstation, Construir);
         
         juguetes.add(NintendoNx);
         juguetes.add(PlayStation5);
         juguetes.add(CastellPlaymobil);
-        
     }
+        
     public void contacteHashSet(){
         HashSet<Contacte> contacte = new HashSet<>();
-        
                 
         marca1 = new Contacte("971548798", "qweq@gmail.com", "07140", "C/ Jardi, 24");
         marca2 = new Contacte("971784565", "gdfd@gmail.com", "07142", "C/ Mateu, 12");
@@ -84,9 +83,9 @@ public class Empresa {
     }
     public void compradorHashSet(){
         HashSet<Comprador> comprador = new HashSet<>();
-        Comprador compradorA = new Comprador("Pere Ramon Vives", registreComp, comprador1);
-        Comprador compradorB = new Comprador("Mateu Perez Munar", registreComp, comprador2);
-        Comprador compradorC = new Comprador("Josep Quetglas Esteve", registreComp, comprador3);
+        compradorA = new Comprador("Pere Ramon Vives", registreComp, comprador1);
+        compradorB = new Comprador("Mateu Perez Munar", registreComp, comprador2);
+        compradorC = new Comprador("Josep Quetglas Esteve", registreComp, comprador3);
         
         comprador.add(compradorA);
         comprador.add(compradorB);
