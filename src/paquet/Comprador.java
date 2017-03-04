@@ -1,7 +1,5 @@
 package paquet;
 
-import java.util.HashSet;
-
 /**
  *
  * @author Andreu Castell, Joan Serra, Salvador Vicens
