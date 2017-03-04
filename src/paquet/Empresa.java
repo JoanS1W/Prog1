@@ -14,8 +14,8 @@ public class Empresa {
     private Contacte marca1, marca2, marca3, comprador1, comprador2, comprador3, proveidor1, proveidor2, proveidor3;
     private Marca Nintendo, Playmobil, Playstation;
     private Tipus Consola, Construir, Trencaclosques;
-    private RegistreComp registreComp;
     private RegistreProv registreProv;
+     private RegistreComp registreCompA, registreCompB, registreCompC;
 
     public void tipusHashSet() {
         HashSet<Tipus> tipus = new HashSet<>();
@@ -34,9 +34,14 @@ public class Empresa {
 
     }
 
-    public void registreCompHashSet() {
+   public void registreCompHashSet() {
         HashSet<RegistreComp> registreComp = new HashSet<>();
-
+        registreCompA = new RegistreComp("02/04/2017", 3, 10, NintendoNx);
+        registreCompB = new RegistreComp("02/04/2017", 3, 10, PlayStation5);
+        registreCompC = new RegistreComp("02/04/2017", 3, 10, CastellPlaymobil);
+        registreComp.add(registreCompA);
+        registreComp.add(registreCompB);
+        registreComp.add(registreCompC);
     }
 
     public void marcaHashSet() {
@@ -90,9 +95,9 @@ public class Empresa {
     public void compradorHashSet() {
         HashSet<Comprador> comprador = new HashSet<>();
         
-        compradorA = new Comprador("Pere Ramon Vives", registreComp, comprador1);
-        compradorB = new Comprador("Mateu Perez Munar", registreComp, comprador2);
-        compradorC = new Comprador("Josep Quetglas Esteve", registreComp, comprador3);
+        compradorA = new Comprador("Pere Ramon Vives", registreCompA, comprador1);
+        compradorB = new Comprador("Mateu Perez Munar", registreCompB, comprador2);
+        compradorC = new Comprador("Josep Quetglas Esteve", registreCompB, comprador3);
 
         comprador.add(compradorA);
         comprador.add(compradorB);

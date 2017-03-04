@@ -1,6 +1,6 @@
 package paquet;
 
-import java.util.Date;
+
 
 /**
  *
@@ -8,17 +8,17 @@ import java.util.Date;
  */
 public class RegistreComp {
 
-    private Date dataRegistre;
+    private String dataRegistre;
     private int quantitat;
-    private float preuReg;
+    private float preuReg; 
     private int descompte;
     private Jugueta jugueta;
 
-    public Date getDataRegistre() {
+    public String getDataRegistre() {
         return dataRegistre;
     }
 
-    public void setDataRegistre(Date dataRegistre) {
+    public void setDataRegistre(String dataRegistre) {
         this.dataRegistre = dataRegistre;
     }
 
@@ -54,10 +54,9 @@ public class RegistreComp {
         this.jugueta = jugueta;
     }
 
-    public RegistreComp(Date dataRegistre, int quantitat, float preuReg, int descompte, Jugueta jugueta) {
+    public RegistreComp(String dataRegistre, int quantitat, int descompte, Jugueta jugueta) {
         this.dataRegistre = dataRegistre;
         this.quantitat = quantitat;
-        this.preuReg = preuReg;
         this.descompte = descompte;
         this.jugueta = jugueta;
     }
