@@ -31,9 +31,11 @@ public class Empresa {
 
     public void registreProvHashSet() {
         HashSet<RegistreProv> registreProv = new HashSet<>();
+        
         registreProvA = new RegistreProv("02/04/2017", 3, 12.24f, NintendoNx);
         registreProvB = new RegistreProv("02/04/2017", 3, 10.34f, PlayStation5);
         registreProvC = new RegistreProv("02/04/2017", 3, 19.12f, CastellPlaymobil);
+        
         registreProv.add(registreProvA);
         registreProv.add(registreProvB);
         registreProv.add(registreProvC);
@@ -41,9 +43,11 @@ public class Empresa {
 
    public void registreCompHashSet() {
         HashSet<RegistreComp> registreComp = new HashSet<>();
+        
         registreCompA = new RegistreComp("02/04/2017", 3, 10, NintendoNx);
         registreCompB = new RegistreComp("02/04/2017", 3, 10, PlayStation5);
         registreCompC = new RegistreComp("02/04/2017", 3, 10, CastellPlaymobil);
+        
         registreComp.add(registreCompA);
         registreComp.add(registreCompB);
         registreComp.add(registreCompC);
