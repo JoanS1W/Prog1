@@ -10,7 +10,7 @@ public class RegistreComp {
 
     private String dataRegistre;
     private int quantitat;
-    private float preuReg; 
+    private float preuReg;
     private int descompte;
     private Jugueta jugueta;
 

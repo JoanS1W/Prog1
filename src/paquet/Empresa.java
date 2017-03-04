@@ -115,5 +115,9 @@ public class Empresa {
         proveidorA = new Proveidor("Pep Franxesc de la Vila", Nintendo, proveidor1 ,registreProvA);
         proveidorB = new Proveidor("Juanjo Ramon Catala", Playmobil, proveidor2, registreProvB);
         proveidorC = new Proveidor("Pere Llagosta Narcis", Playstation, proveidor3, registreProvC);
+        
+        proveidor.add(proveidorA);
+        proveidor.add(proveidorB);
+        proveidor.add(proveidorC);
     }
 }
