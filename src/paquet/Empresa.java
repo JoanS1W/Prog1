@@ -10,13 +10,13 @@ import java.util.Date;
 public class Empresa {
 
     private ArrayList<Tipus> tipus = new ArrayList<>();
-    private ArrayList<Contacte> contacte = new ArrayList<>();
-    private ArrayList<Marca> marca = new ArrayList<>();
+    private ArrayList<Contacte> contactes = new ArrayList<>();
+    private ArrayList<Marca> marques = new ArrayList<>();
     private ArrayList<Jugueta> juguetes = new ArrayList<>();
-    private ArrayList<RegistreComp> registreComp = new ArrayList<>();
-    private ArrayList<Comprador> comprador = new ArrayList<>();
-    private ArrayList<RegistreProv> registreProv = new ArrayList<>();
-    private ArrayList<Proveidor> proveidor = new ArrayList<>();
+    private ArrayList<RegistreComp> registresComp = new ArrayList<>();
+    private ArrayList<Comprador> compradors = new ArrayList<>();
+    private ArrayList<RegistreProv> registresProv = new ArrayList<>();
+    private ArrayList<Proveidor> proveidors = new ArrayList<>();
 
     public Empresa() {
         tipusArrayList();
@@ -146,9 +146,9 @@ public class Empresa {
         RegistreProv registreProvB = new RegistreProv(2, b, 3, 10.34f, playStation5);
         RegistreProv registreProvC = new RegistreProv(3, c, 3, 19.12f, castellPlaymobil);
 
-        this.registreProv.add(registreProvA);
-        this.registreProv.add(registreProvB);
-        this.registreProv.add(registreProvC);
+        this.registresProv.add(registreProvA);
+        this.registresProv.add(registreProvB);
+        this.registresProv.add(registreProvC);
         //BORRAR
         System.out.println(registreProvC);
     }
@@ -166,25 +166,37 @@ public class Empresa {
         RegistreComp registreCompB = new RegistreComp(2, b, 3, 12.24f, 10, playStation5);
         RegistreComp registreCompC = new RegistreComp(3, c, 3, 12.24f, 10, castellPlaymobil);
 
-        this.registreComp.add(registreCompA);
-        this.registreComp.add(registreCompB);
-        this.registreComp.add(registreCompC);
+        this.registresComp.add(registreCompA);
+        this.registresComp.add(registreCompB);
+        this.registresComp.add(registreCompC);
     }
 
     public void marcaArrayList() {
+        Contacte marca1 = trobaContacte(contactes, "m1");
+        Contacte marca2 = trobaContacte(contactes, "m2");
+        Contacte marca3 = trobaContacte(contactes, "m3");
+        
         Marca nintendo = new Marca("Nintendo", marca1);
         Marca playmobil = new Marca("Playmobil", marca2);
         Marca playstation = new Marca("Playstation", marca3);
 
-        this.marca.add(nintendo);
-        this.marca.add(playmobil);
-        this.marca.add(playstation);
+        this.marques.add(nintendo);
+        this.marques.add(playmobil);
+        this.marques.add(playstation);
     }
 
     public void juguetaArrayList() {
-        Jugueta nintendoNx = new Jugueta(320, "NintendoNx", "Jugueta molt divertida", 25, Classificacio.C8_12, Nintendo, Consola);
-        Jugueta playStation5 = new Jugueta(540, "PlayStation5", "Jugueta de derrera generacio", 37, Classificacio.C19, Playmobil, Consola);
-        Jugueta castellPlaymobil = new Jugueta(125, "CastellPlaymobil", "Jugueta perfecta per nins petits", 14, Classificacio.C4_8, Playstation, Construir);
+        Marca Nintendo = trobaMarca(marques, "Nintendo");
+        Marca Playmobil = trobaMarca(marques, "Playmobil");
+        Marca Playstation = trobaMarca(marques, "Playstation");
+        
+        Tipus Consola = trobaTipus(tipus, "Consola");
+        Tipus Construir = trobaTipus(tipus, "Construir");
+        Tipus Trencaclosques = trobaTipus(tipus, "Trencaclosques");
+        
+        Jugueta nintendoNx = new Jugueta(320f, "NintendoNx", "Jugueta molt divertida", 25, Classificacio.C8_12, Nintendo,  Consola);
+        Jugueta playStation5 = new Jugueta(540f, "PlayStation5", "Jugueta de derrera generacio", 10, Classificacio.C8_12, Playmobil, Construir);
+        Jugueta castellPlaymobil = new Jugueta(125, "CastellPlaymobil", "Jugueta perfecta per nins petits", 14, Classificacio.C4_8, Playstation, Trencaclosques);
 
         this.juguetes.add(nintendoNx);
         this.juguetes.add(playStation5);
@@ -202,35 +214,55 @@ public class Empresa {
         Contacte proveidor2 = new Contacte("p2", "971221345", "qwercv@gmail.com", "07179", "C/ ACDC, 44");
         Contacte proveidor3 = new Contacte("p3", "971631545", "bvzxcvxc@gmail.com", "07166", "C/ Pollentia, 6");
 
-        this.contacte.add(marca1);
-        this.contacte.add(marca2);
-        this.contacte.add(marca3);
-        this.contacte.add(comprador1);
-        this.contacte.add(comprador2);
-        this.contacte.add(comprador3);
-        this.contacte.add(proveidor1);
-        this.contacte.add(proveidor2);
-        this.contacte.add(proveidor3);
+        this.contactes.add(marca1);
+        this.contactes.add(marca2);
+        this.contactes.add(marca3);
+        this.contactes.add(comprador1);
+        this.contactes.add(comprador2);
+        this.contactes.add(comprador3);
+        this.contactes.add(proveidor1);
+        this.contactes.add(proveidor2);
+        this.contactes.add(proveidor3);
     }
 
     public void compradorArrayList() {
+        RegistreComp registreCompA = trobaRegistreComp(registresComp, 1);
+        RegistreComp registreCompB = trobaRegistreComp(registresComp, 2);
+        RegistreComp registreCompC = trobaRegistreComp(registresComp, 3);
+        
+        Contacte comprador1 = trobaContacte(contactes, "c1");
+        Contacte comprador2 = trobaContacte(contactes, "c2");
+        Contacte comprador3 = trobaContacte(contactes, "c3");
+        
         Comprador compradorA = new Comprador("Pere Ramon Vives", registreCompA, comprador1);
         Comprador compradorB = new Comprador("Mateu Perez Munar", registreCompB, comprador2);
-        Comprador compradorC = new Comprador("Josep Quetglas Esteve", registreCompB, comprador3);
+        Comprador compradorC = new Comprador("Josep Quetglas Esteve", registreCompC, comprador3);
 
-        this.comprador.add(compradorA);
-        this.comprador.add(compradorB);
-        this.comprador.add(compradorC);
+        this.compradors.add(compradorA);
+        this.compradors.add(compradorB);
+        this.compradors.add(compradorC);
     }
 
     public void proveidorArrayList() {
+        RegistreProv registreProvA = trobaRegistreProv(registresProv, 1);
+        RegistreProv registreProvB = trobaRegistreProv(registresProv, 2);
+        RegistreProv registreProvC = trobaRegistreProv(registresProv, 3);
+        
+        Marca Nintendo = trobaMarca(marques, "Nintendo");
+        Marca Playmobil = trobaMarca(marques, "Playmobil");
+        Marca Playstation = trobaMarca(marques, "Playstation");
+        
+        Contacte proveidor1 = trobaContacte(contactes, "p1");
+        Contacte proveidor2 = trobaContacte(contactes, "p2");
+        Contacte proveidor3 = trobaContacte(contactes, "p3");
+        
         Proveidor proveidorA = new Proveidor("Pep Franxesc de la Vila", Nintendo, proveidor1, registreProvA);
         Proveidor proveidorB = new Proveidor("Juanjo Ramon Catala", Playmobil, proveidor2, registreProvB);
         Proveidor proveidorC = new Proveidor("Pere Llagosta Narcis", Playstation, proveidor3, registreProvC);
 
-        this.proveidor.add(proveidorA);
-        this.proveidor.add(proveidorB);
-        this.proveidor.add(proveidorC);
+        this.proveidors.add(proveidorA);
+        this.proveidors.add(proveidorB);
+        this.proveidors.add(proveidorC);
     }
 
     //BORRAR
