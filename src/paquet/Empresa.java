@@ -28,8 +28,7 @@ public class Empresa {
         compradorArrayList();
         proveidorArrayList();
     }
-    
-    
+
     public String tobraNomCompra(ArrayList<Comprador> llista, String nom) {
         int llargaria = llista.size();
         for (int i = 0; i < llargaria; i++) {
@@ -49,6 +48,7 @@ public class Empresa {
             System.out.println("asd");
         }
     }
+
     public Tipus trobaTipus(ArrayList<Tipus> llista, String nom) {
         int llargaria = llista.size();
         for (int i = 0; i < llargaria; i++) {
@@ -163,6 +163,9 @@ public class Empresa {
         this.registresProv.add(registreProvA);
         this.registresProv.add(registreProvB);
         this.registresProv.add(registreProvC);
+
+        //BORRAR
+        System.out.println(registreProvC);
     }
 
     public void registreCompArrayList() {
@@ -187,7 +190,7 @@ public class Empresa {
         Contacte marca1 = trobaContacte(contactes, "m1");
         Contacte marca2 = trobaContacte(contactes, "m2");
         Contacte marca3 = trobaContacte(contactes, "m3");
-        
+
         Marca nintendo = new Marca("Nintendo", marca1);
         Marca playmobil = new Marca("Playmobil", marca2);
         Marca playstation = new Marca("Playstation", marca3);
@@ -201,12 +204,12 @@ public class Empresa {
         Marca Nintendo = trobaMarca(marques, "Nintendo");
         Marca Playmobil = trobaMarca(marques, "Playmobil");
         Marca Playstation = trobaMarca(marques, "Playstation");
-        
+
         Tipus Consola = trobaTipus(tipus, "Consola");
         Tipus Construir = trobaTipus(tipus, "Construir");
         Tipus Trencaclosques = trobaTipus(tipus, "Trencaclosques");
-        
-        Jugueta nintendoNx = new Jugueta(320f, "NintendoNx", "Jugueta molt divertida", 25, Classificacio.C8_12, Nintendo,  Consola);
+
+        Jugueta nintendoNx = new Jugueta(320f, "NintendoNx", "Jugueta molt divertida", 25, Classificacio.C8_12, Nintendo, Consola);
         Jugueta playStation5 = new Jugueta(540f, "PlayStation5", "Jugueta de derrera generacio", 10, Classificacio.C8_12, Playmobil, Construir);
         Jugueta castellPlaymobil = new Jugueta(125, "CastellPlaymobil", "Jugueta perfecta per nins petits", 14, Classificacio.C4_8, Playstation, Trencaclosques);
 
@@ -241,11 +244,11 @@ public class Empresa {
         RegistreComp registreCompA = trobaRegistreComp(registresComp, 1);
         RegistreComp registreCompB = trobaRegistreComp(registresComp, 2);
         RegistreComp registreCompC = trobaRegistreComp(registresComp, 3);
-        
+
         Contacte comprador1 = trobaContacte(contactes, "c1");
         Contacte comprador2 = trobaContacte(contactes, "c2");
         Contacte comprador3 = trobaContacte(contactes, "c3");
-        
+
         Comprador compradorA = new Comprador("Pere Ramon Vives", registreCompA, comprador1);
         Comprador compradorB = new Comprador("Mateu Perez Munar", registreCompB, comprador2);
         Comprador compradorC = new Comprador("Josep Quetglas Esteve", registreCompC, comprador3);
@@ -259,15 +262,15 @@ public class Empresa {
         RegistreProv registreProvA = trobaRegistreProv(registresProv, 1);
         RegistreProv registreProvB = trobaRegistreProv(registresProv, 2);
         RegistreProv registreProvC = trobaRegistreProv(registresProv, 3);
-        
+
         Marca Nintendo = trobaMarca(marques, "Nintendo");
         Marca Playmobil = trobaMarca(marques, "Playmobil");
         Marca Playstation = trobaMarca(marques, "Playstation");
-        
+
         Contacte proveidor1 = trobaContacte(contactes, "p1");
         Contacte proveidor2 = trobaContacte(contactes, "p2");
         Contacte proveidor3 = trobaContacte(contactes, "p3");
-        
+
         Proveidor proveidorA = new Proveidor("Pep Franxesc de la Vila", Nintendo, proveidor1, registreProvA);
         Proveidor proveidorB = new Proveidor("Juanjo Ramon Catala", Playmobil, proveidor2, registreProvB);
         Proveidor proveidorC = new Proveidor("Pere Llagosta Narcis", Playstation, proveidor3, registreProvC);
@@ -276,4 +279,9 @@ public class Empresa {
         this.proveidors.add(proveidorB);
         this.proveidors.add(proveidorC);
     }
+
+    /*public static void main(String[] args) {
+        Empresa o = new Empresa();
+        o.registreProvArrayList();
+    }*/
 }
