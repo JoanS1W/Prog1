@@ -9,6 +9,6 @@ public class Main {
     public static void main(String[] args) {
 
         Empresa o = new Empresa();
-        o.juguetaArrayList();
+        o.tornaClient("Pere Ramon Vives");
     }
 }

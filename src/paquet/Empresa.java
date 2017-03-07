@@ -28,13 +28,27 @@ public class Empresa {
         compradorArrayList();
         proveidorArrayList();
     }
+    
+    
+    public String tobraNomCompra(ArrayList<Comprador> llista, String nom) {
+        int llargaria = llista.size();
+        for (int i = 0; i < llargaria; i++) {
+            Comprador comp = llista.get(i);
+            if (comp.getNomComprador().equals(nom)) {
+                return nom;
+            }
+        }
+        return null;
+    }
 
-    /*public void tornaClient(String nom, String data) {
-        if (nom.equalsIgnoreCase(proveidorA.getNomProveidor()) && data.equalsIgnoreCase(registreProvA.getDataRegistre()));
+    public void tornaClient(String nom) {
+        Empresa p = new Empresa();
+        String nomcomprador = p.tobraNomCompra(compradors, nom);
+        if (nom.equalsIgnoreCase(nomcomprador));
         {
             System.out.println("asd");
         }
-    }*/
+    }
     public Tipus trobaTipus(ArrayList<Tipus> llista, String nom) {
         int llargaria = llista.size();
         for (int i = 0; i < llargaria; i++) {
