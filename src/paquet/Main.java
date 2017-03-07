@@ -7,6 +7,8 @@ package paquet;
 public class Main {
 
     public static void main(String[] args) {
-        
+
+        Empresa o = new Empresa();
+        o.juguetaArrayList();
     }
 }

@@ -149,8 +149,6 @@ public class Empresa {
         this.registresProv.add(registreProvA);
         this.registresProv.add(registreProvB);
         this.registresProv.add(registreProvC);
-        //BORRAR
-        System.out.println(registreProvC);
     }
 
     public void registreCompArrayList() {
@@ -263,11 +261,5 @@ public class Empresa {
         this.proveidors.add(proveidorA);
         this.proveidors.add(proveidorB);
         this.proveidors.add(proveidorC);
-    }
-
-    //BORRAR
-    public static void main(String[] args) {
-        Empresa o = new Empresa();
-        o.registreProvArrayList();
     }
 }
