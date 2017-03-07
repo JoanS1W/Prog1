@@ -5,6 +5,7 @@ package paquet;
  * @author Andreu Castell, Joan Serra, Salvador Vicens
  */
 public class Contacte {
+   private String nom;
    private String telefon;
    private String email;
    private String zip;
@@ -42,7 +43,16 @@ public class Contacte {
         this.direccio = direccio;
     }
 
-    public Contacte(String telefon, String email, String zip, String direccio) {
+    public String getNom() {
+        return nom;
+    }
+
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+
+    public Contacte(String nom, String telefon, String email, String zip, String direccio) {
+        this.nom = nom;
         this.telefon = telefon;
         this.email = email;
         this.zip = zip;
@@ -51,6 +61,7 @@ public class Contacte {
 
     @Override
     public String toString() {
-        return "Contacte{" + "telefon=" + telefon + ", email=" + email + ", zip=" + zip + ", direccio=" + direccio + '}';
+        return "Contacte{" + "nom=" + nom + ", telefon=" + telefon + ", email=" + email + ", zip=" + zip + ", direccio=" + direccio + '}';
     }
+
 }

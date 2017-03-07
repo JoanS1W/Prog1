@@ -1,22 +1,25 @@
 package paquet;
 
+import java.util.Date;
+
 /**
  *
  * @author Andreu Castell, Joan Serra, Salvador Vicens
  */
 public class RegistreComp {
 
-    private String dataRegistre;
+    private int id;
+    private Date dataRegistre;
     private int quantitat;
     private float preuReg;
     private int descompte;
     private Jugueta jugueta;
 
-    public String getDataRegistre() {
+    public Date getDataRegistre() {
         return dataRegistre;
     }
 
-    public void setDataRegistre(String dataRegistre) {
+    public void setDataRegistre(Date dataRegistre) {
         this.dataRegistre = dataRegistre;
     }
 
@@ -52,15 +55,26 @@ public class RegistreComp {
         this.jugueta = jugueta;
     }
 
-    public RegistreComp(String dataRegistre, int quantitat, int descompte, Jugueta jugueta) {
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public RegistreComp(int id, Date dataRegistre, int quantitat, float preuReg, int descompte, Jugueta jugueta) {
+        this.id = id;
         this.dataRegistre = dataRegistre;
         this.quantitat = quantitat;
+        this.preuReg = preuReg;
         this.descompte = descompte;
         this.jugueta = jugueta;
     }
 
     @Override
     public String toString() {
-        return "RegistreComp{" + "dataRegistre=" + dataRegistre + ", quantitat=" + quantitat + ", preuReg=" + preuReg + ", descompte=" + descompte + ", jugueta=" + jugueta + '}';
+        return "RegistreComp{" + "id=" + id + ", dataRegistre=" + dataRegistre + ", quantitat=" + quantitat + ", preuReg=" + preuReg + ", descompte=" + descompte + ", jugueta=" + jugueta + '}';
     }
+
 }
