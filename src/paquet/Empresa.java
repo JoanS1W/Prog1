@@ -29,28 +29,98 @@ public class Empresa {
         proveidorArrayList();
     }
 
-    public void tornaClient(String nom, String data) {
+    /*public void tornaClient(String nom, String data) {
         if (nom.equalsIgnoreCase(proveidorA.getNomProveidor()) && data.equalsIgnoreCase(registreProvA.getDataRegistre()));
         {
             System.out.println("asd");
         }
-    }
-
+    }*/
     public Tipus trobaTipus(ArrayList<Tipus> llista, String nom) {
-        
-        for (int i = 0; i < 10; i++) {
-            if (llista.getNomTipus().equals(nom)) {
-                return 
+        int llargaria = llista.size();
+        for (int i = 0; i < llargaria; i++) {
+            Tipus tip = llista.get(i);
+            if (tip.getNomTipus().equals(nom)) {
+                return tip;
             }
         }
+        return null;
     }
 
     public RegistreProv trobaRegistreProv(ArrayList<RegistreProv> llista, int id) {
-
+        int llargaria = llista.size();
+        for (int i = 0; i < llargaria; i++) {
+            RegistreProv regPro = llista.get(i);
+            if (regPro.getId() == id) {
+                return regPro;
+            }
+        }
+        return null;
     }
 
     public RegistreComp trobaRegistreComp(ArrayList<RegistreComp> llista, int id) {
+        int llargaria = llista.size();
+        for (int i = 0; i < llargaria; i++) {
+            RegistreComp regComp = llista.get(i);
+            if (regComp.getId() == id) {
+                return regComp;
+            }
+        }
+        return null;
+    }
 
+    public Marca trobaMarca(ArrayList<Marca> llista, String nom) {
+        int llargaria = llista.size();
+        for (int i = 0; i < llargaria; i++) {
+            Marca mar = llista.get(i);
+            if (mar.getNomMarca().equals(nom)) {
+                return mar;
+            }
+        }
+        return null;
+    }
+
+    public Jugueta trobaJugueta(ArrayList<Jugueta> llista, String nom) {
+        int llargaria = llista.size();
+        for (int i = 0; i < llargaria; i++) {
+            Jugueta jug = llista.get(i);
+            if (jug.getNomJugueta().equals(nom)) {
+                return jug;
+            }
+        }
+        return null;
+    }
+
+    public Contacte trobaContacte(ArrayList<Contacte> llista, String nom) {
+        int llargaria = llista.size();
+        for (int i = 0; i < llargaria; i++) {
+            Contacte cont = llista.get(i);
+            if (cont.getNom().equals(nom)) {
+                return cont;
+            }
+        }
+        return null;
+    }
+
+    public Comprador trobaComprador(ArrayList<Comprador> llista, String nom) {
+        int llargaria = llista.size();
+        for (int i = 0; i < llargaria; i++) {
+            Comprador comp = llista.get(i);
+            if (comp.getNomComprador().equals(nom)) {
+                return comp;
+            }
+        }
+        return null;
+    }
+
+    public Proveidor trobaProveidor(ArrayList<Proveidor> llista, String nom) {
+        int llargaria = llista.size();
+        for (int i = 0; i < llargaria; i++) {
+            Proveidor prov = llista.get(i);
+            if (prov.getNomProveidor().equals(nom)) {
+                return prov;
+            }
+        }
+        return null;
     }
 
     public void tipusArrayList() {
@@ -64,11 +134,13 @@ public class Empresa {
     }
 
     public void registreProvArrayList() {
-        Date a = new Date(2016, 6, 24);
-        Date b = new Date(2016, 8, 15);
-        Date c = new Date(2016, 4, 18);
-        
-        nintendoNx = trobaRegistreProv(1);
+        Date a = new Date(116, 6, 24);
+        Date b = new Date(116, 8, 15);
+        Date c = new Date(116, 4, 18);
+
+        Jugueta nintendoNx = trobaJugueta(juguetes, "NintendoNx");
+        Jugueta playStation5 = trobaJugueta(juguetes, "PlayStation5");
+        Jugueta castellPlaymobil = trobaJugueta(juguetes, "CastellPlaymobil");
 
         RegistreProv registreProvA = new RegistreProv(1, a, 3, 12.24f, nintendoNx);
         RegistreProv registreProvB = new RegistreProv(2, b, 3, 10.34f, playStation5);
@@ -77,16 +149,22 @@ public class Empresa {
         this.registreProv.add(registreProvA);
         this.registreProv.add(registreProvB);
         this.registreProv.add(registreProvC);
+        //BORRAR
+        System.out.println(registreProvC);
     }
 
     public void registreCompArrayList() {
-        Date a = new Date(2015, 6, 24);
-        Date b = new Date(2015, 8, 15);
-        Date c = new Date(2015, 4, 18);
+        Date a = new Date(115, 6, 24);
+        Date b = new Date(115, 8, 15);
+        Date c = new Date(115, 4, 18);
 
-        RegistreComp registreCompA = new RegistreComp(1, a, 3, 10, NintendoNx);
-        RegistreComp registreCompB = new RegistreComp(2, b, 3, 10, PlayStation5);
-        RegistreComp registreCompC = new RegistreComp(3, c, 3, 10, CastellPlaymobil);
+        Jugueta nintendoNx = trobaJugueta(juguetes, "NintendoNx");
+        Jugueta playStation5 = trobaJugueta(juguetes, "PlayStation5");
+        Jugueta castellPlaymobil = trobaJugueta(juguetes, "CastellPlaymobil");
+
+        RegistreComp registreCompA = new RegistreComp(1, a, 3, 12.24f, 10, nintendoNx);
+        RegistreComp registreCompB = new RegistreComp(2, b, 3, 12.24f, 10, playStation5);
+        RegistreComp registreCompC = new RegistreComp(3, c, 3, 12.24f, 10, castellPlaymobil);
 
         this.registreComp.add(registreCompA);
         this.registreComp.add(registreCompB);
@@ -94,23 +172,23 @@ public class Empresa {
     }
 
     public void marcaArrayList() {
-        Marca Nintendo = new Marca("Nintendo", marca1);
-        Marca Playmobil = new Marca("Playmobil", marca2);
-        Marca Playstation = new Marca("Playstation", marca3);
+        Marca nintendo = new Marca("Nintendo", marca1);
+        Marca playmobil = new Marca("Playmobil", marca2);
+        Marca playstation = new Marca("Playstation", marca3);
 
-        this.marca.add(Nintendo);
-        this.marca.add(Playmobil);
-        this.marca.add(Playstation);
+        this.marca.add(nintendo);
+        this.marca.add(playmobil);
+        this.marca.add(playstation);
     }
 
     public void juguetaArrayList() {
-        Jugueta NintendoNx = new Jugueta(320, "NintendoNx", "Jugueta molt divertida", 25, Classificacio.C8_12, Nintendo, Consola);
-        Jugueta PlayStation5 = new Jugueta(540, "PlayStation5", "Jugueta de derrera generacio", 37, Classificacio.C19, Playmobil, Consola);
-        Jugueta CastellPlaymobil = new Jugueta(125, "CastellPlaymobil", "Jugueta perfecta per nins petits", 14, Classificacio.C4_8, Playstation, Construir);
+        Jugueta nintendoNx = new Jugueta(320, "NintendoNx", "Jugueta molt divertida", 25, Classificacio.C8_12, Nintendo, Consola);
+        Jugueta playStation5 = new Jugueta(540, "PlayStation5", "Jugueta de derrera generacio", 37, Classificacio.C19, Playmobil, Consola);
+        Jugueta castellPlaymobil = new Jugueta(125, "CastellPlaymobil", "Jugueta perfecta per nins petits", 14, Classificacio.C4_8, Playstation, Construir);
 
-        this.juguetes.add(NintendoNx);
-        this.juguetes.add(PlayStation5);
-        this.juguetes.add(CastellPlaymobil);
+        this.juguetes.add(nintendoNx);
+        this.juguetes.add(playStation5);
+        this.juguetes.add(castellPlaymobil);
     }
 
     public void contacteArrayList() {
@@ -153,5 +231,11 @@ public class Empresa {
         this.proveidor.add(proveidorA);
         this.proveidor.add(proveidorB);
         this.proveidor.add(proveidorC);
+    }
+
+    //BORRAR
+    public static void main(String[] args) {
+        Empresa o = new Empresa();
+        o.registreProvArrayList();
     }
 }
