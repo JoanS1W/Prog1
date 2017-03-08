@@ -19,5 +19,6 @@ public class Main {
         //Segona consulta
         Date dataConsulta2 = new Date(115, 8, 15);
         System.out.println(o.exercici22("PlayStation5", dataConsulta2));
+        //Error...
     }
 }
