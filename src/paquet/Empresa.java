@@ -49,14 +49,18 @@ public class Empresa {
         return comprador.getRegistre();
     }
 
-    /*Metode privat usat pel metode exercici22
-    private int exercici2(ArrayList<RegistreComp> llista, String nom, Date data) {
-        int llargaria = llista.size();
+ //Metode privat usat pel metode exercici22
+    private int exercici2(String nom, Date data) {
+        int llargaria = registresComp.size();
+        int llargaria2 = registresComp.size();
         int compres;
         for (int i = 0; i < llargaria; i++) {
-            RegistreComp comp = llista.get(i);
-            if (comp.getDetall().equals(nom)) {
-                return compres = comp.getQuantitat();
+            RegistreComp comp = registresComp.get(i);
+            for (int e = 0; e < llargaria; e++) {
+            DetallFacturaComprador compr = DetallFacturaComprador.get(e);
+            if (comp.getDetall().equals(nom))
+            {
+                return compres = DetallFacturaComprador.getQuantitat();
             }
         }
         return 0;
@@ -64,10 +68,11 @@ public class Empresa {
 
     //Metode per a resoldre la consulta 2
     public int exercici22(String nom, Date data) {
-        int conta = exercici2(registresComp, nom, data);
+        int conta = exercici2(nom, data);
         return conta;
-    }*/
-
+    }
+    
+    
     //Metode per a trobar els atributs tipus de dins dels arrayList
     public Tipus trobaTipus(String nom) {
         int llargaria = tipus.size();
