@@ -6,11 +6,13 @@ package paquet;
  */
 public class Proveidor {
 
+    //Atributs
     private String nomProveidor;
     private Marca marca;
     private Contacte contacte;
     private RegistreProv registre;
 
+    //Metodes
     public String getNomProveidor() {
         return nomProveidor;
     }

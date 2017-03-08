@@ -6,9 +6,11 @@ package paquet;
  */
 public class Marca {
 
+    //Atributs
     private String nomMarca;
     private Contacte contacte;
 
+    //Metodes
     public String getNomMarca() {
         return nomMarca;
     }

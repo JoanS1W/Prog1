@@ -9,6 +9,7 @@ import java.util.Date;
  */
 public class Empresa {
 
+    //Atributs
     private ArrayList<Tipus> tipus = new ArrayList<>();
     private ArrayList<Contacte> contactes = new ArrayList<>();
     private ArrayList<Marca> marques = new ArrayList<>();
@@ -18,6 +19,7 @@ public class Empresa {
     private ArrayList<RegistreProv> registresProv = new ArrayList<>();
     private ArrayList<Proveidor> proveidors = new ArrayList<>();
 
+    //Metodes
     public Empresa() {
         tipusArrayList();
         registreProvArrayList();
@@ -29,6 +31,7 @@ public class Empresa {
         proveidorArrayList();
     }
 
+    //Metode privat usat pel metode exercici11
     private Comprador exercici1(ArrayList<Comprador> llista, String nom, Date data) {
         int llargaria = llista.size();
         for (int i = 0; i < llargaria; i++) {
@@ -40,13 +43,14 @@ public class Empresa {
         return null;
     }
 
+    //Metode per a resoldre la consulta 1
     public RegistreComp exercici11(String nom, Date data) {
-        Empresa p = new Empresa();
-        Comprador comprador = p.exercici1(compradors, nom, data);
+        Comprador comprador = exercici1(compradors, nom, data);
         return comprador.getRegistre();
     }
 
-    public int exercici2(ArrayList<RegistreComp> llista, String nom, Date data) {
+    //Metode privat usat pel metode exercici22
+    private int exercici2(ArrayList<RegistreComp> llista, String nom, Date data) {
         int llargaria = llista.size();
         int compres;
         for (int i = 0; i < llargaria; i++) {
@@ -58,6 +62,13 @@ public class Empresa {
         return 0;
     }
 
+    //Metode per a resoldre la consulta 2
+    public int exercici22(String nom, Date data) {
+        int registreComp = exercici2(registresComp, nom, data);
+        return registreComp;
+    }
+
+    //Metode per a trobar els atributs tipus de dins dels arrayList
     public String trobaTipus(ArrayList<Tipus> llista, String nom) {
         int llargaria = llista.size();
         for (int i = 0; i < llargaria; i++) {
@@ -69,6 +80,7 @@ public class Empresa {
         return null;
     }
 
+    //Metode per a trobar els atributs registreProv de dins dels arrayList
     public RegistreProv trobaRegistreProv(ArrayList<RegistreProv> llista, int id) {
         int llargaria = llista.size();
         for (int i = 0; i < llargaria; i++) {
@@ -80,6 +92,7 @@ public class Empresa {
         return null;
     }
 
+    //Metode per a trobar els atributs registreComp de dins dels arrayList
     public RegistreComp trobaRegistreComp(ArrayList<RegistreComp> llista, int id) {
         int llargaria = llista.size();
         for (int i = 0; i < llargaria; i++) {
@@ -91,6 +104,7 @@ public class Empresa {
         return null;
     }
 
+    //Metode per a trobar els atributs marca de dins dels arrayList
     public Marca trobaMarca(ArrayList<Marca> llista, String nom) {
         int llargaria = llista.size();
         for (int i = 0; i < llargaria; i++) {
@@ -102,6 +116,7 @@ public class Empresa {
         return null;
     }
 
+    //Metode per a trobar els atributs jugueta de dins dels arrayList
     public String trobaJugueta(ArrayList<Jugueta> llista, String nom) {
         int llargaria = llista.size();
         for (int i = 0; i < llargaria; i++) {
@@ -113,6 +128,7 @@ public class Empresa {
         return null;
     }
 
+    //Metode per a trobar els atributs contacte de dins dels arrayList
     public Contacte trobaContacte(ArrayList<Contacte> llista, String nom) {
         int llargaria = llista.size();
         for (int i = 0; i < llargaria; i++) {
@@ -124,6 +140,7 @@ public class Empresa {
         return null;
     }
 
+    //Metode per a trobar els atributs comprador de dins dels arrayList
     public Comprador trobaComprador(ArrayList<Comprador> llista, String nom) {
         int llargaria = llista.size();
         for (int i = 0; i < llargaria; i++) {
@@ -135,6 +152,7 @@ public class Empresa {
         return null;
     }
 
+    //Metode per a trobar els atributs proveidor de dins dels arrayList
     public Proveidor trobaProveidor(ArrayList<Proveidor> llista, String nom) {
         int llargaria = llista.size();
         for (int i = 0; i < llargaria; i++) {
@@ -146,6 +164,7 @@ public class Empresa {
         return null;
     }
 
+    //Metode per omplir l'arrayList tipus.
     public void tipusArrayList() {
         Tipus consola = new Tipus("Consola");
         Tipus construir = new Tipus("Construir");
@@ -156,6 +175,7 @@ public class Empresa {
         this.tipus.add(trencaclosques);
     }
 
+    //Metode per omplir l'arrayList registreProv.
     public void registreProvArrayList() {
         Date a = new Date(116, 6, 24);
         Date b = new Date(116, 8, 15);
@@ -174,6 +194,7 @@ public class Empresa {
         this.registresProv.add(registreProvC);
     }
 
+    //Metode per omplir l'arrayList registreComp.
     public void registreCompArrayList() {
         Date a = new Date(115, 6, 24);
         Date b = new Date(115, 8, 15);
@@ -192,6 +213,7 @@ public class Empresa {
         this.registresComp.add(registreCompC);
     }
 
+    //Metode per omplir l'arrayList marca.
     public void marcaArrayList() {
         Contacte marca1 = trobaContacte(contactes, "m1");
         Contacte marca2 = trobaContacte(contactes, "m2");
@@ -206,6 +228,7 @@ public class Empresa {
         this.marques.add(playstation);
     }
 
+    //Metode per omplir l'arrayList jugueta.
     public void juguetaArrayList() {
         Marca nintendo = trobaMarca(marques, "Nintendo");
         Marca playmobil = trobaMarca(marques, "Playmobil");
@@ -224,6 +247,7 @@ public class Empresa {
         this.juguetes.add(castellPlaymobil);
     }
 
+    //Metode per omplir l'arrayList contacte.
     public void contacteArrayList() {
         Contacte marca1 = new Contacte("m1", "971548798", "qweq@gmail.com", "07140", "C/ Jardi, 24");
         Contacte marca2 = new Contacte("m2", "971784565", "gdfd@gmail.com", "07142", "C/ Mateu, 12");
@@ -246,6 +270,7 @@ public class Empresa {
         this.contactes.add(proveidor3);
     }
 
+    //Metode per omplir l'arrayList comprador.
     public void compradorArrayList() {
         RegistreComp registreCompA = trobaRegistreComp(registresComp, 1);
         RegistreComp registreCompB = trobaRegistreComp(registresComp, 2);
@@ -264,6 +289,7 @@ public class Empresa {
         this.compradors.add(compradorC);
     }
 
+    //Metode per omplir l'arrayList proveidor.
     public void proveidorArrayList() {
         RegistreProv registreProvA = trobaRegistreProv(registresProv, 1);
         RegistreProv registreProvB = trobaRegistreProv(registresProv, 2);

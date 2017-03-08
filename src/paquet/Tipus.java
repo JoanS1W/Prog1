@@ -6,8 +6,10 @@ package paquet;
  */
 public class Tipus {
 
+    //Atributs
     private String nomTipus;
 
+    //Metodes
     public String getNomTipus() {
         return nomTipus;
     }

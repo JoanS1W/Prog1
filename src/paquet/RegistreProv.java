@@ -8,12 +8,14 @@ import java.util.Date;
  */
 public class RegistreProv {
 
+    //Atributs
     private int id;
     private Date dataRegistre;
     private int unitats;
     private float preuProveidor;
     private String jugueta;
 
+    //Metodes
     public Date getDataRegistre() {
         return dataRegistre;
     }

@@ -6,10 +6,12 @@ package paquet;
  */
 public class Comprador {
 
+    //Atributs
     private String nomComprador;
     private RegistreComp registre;
     private Contacte contacte;
 
+    //Metodes
     public String getNomComprador() {
         return nomComprador;
     }

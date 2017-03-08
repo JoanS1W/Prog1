@@ -6,12 +6,14 @@ package paquet;
  */
 public class Contacte {
 
+    //Atributs
     private String nom;
     private String telefon;
     private String email;
     private String zip;
     private String direccio;
 
+    //Metodes
     public String getTelefon() {
         return telefon;
     }

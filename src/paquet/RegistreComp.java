@@ -8,6 +8,7 @@ import java.util.Date;
  */
 public class RegistreComp {
 
+    //Atributs
     private int id;
     private Date dataRegistre;
     private int quantitat;
@@ -15,6 +16,7 @@ public class RegistreComp {
     private int descompte;
     private String jugueta;
 
+    //Metodes
     public Date getDataRegistre() {
         return dataRegistre;
     }

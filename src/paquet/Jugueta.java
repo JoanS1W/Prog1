@@ -6,6 +6,7 @@ package paquet;
  */
 public class Jugueta {
 
+    //Atributs
     private float preuVentaJugueta;
     private String nomJugueta;
     private String descripcioJugueta;
@@ -14,6 +15,7 @@ public class Jugueta {
     private Marca marca;
     private String tipus;
 
+    //Metodes
     public float getPreuVentaJugueta() {
         return preuVentaJugueta;
     }
