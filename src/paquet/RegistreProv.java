@@ -12,7 +12,7 @@ public class RegistreProv {
     private Date dataRegistre;
     private int unitats;
     private float preuProveidor;
-    private Jugueta jugueta;
+    private String jugueta;
 
     public Date getDataRegistre() {
         return dataRegistre;
@@ -26,39 +26,15 @@ public class RegistreProv {
         return preuProveidor;
     }
 
-    public Jugueta getJugueta() {
+    public String getJugueta() {
         return jugueta;
-    }
-
-    public void setDataRegistre(Date dataRegistre) {
-        this.dataRegistre = dataRegistre;
-    }
-
-    public void setUnitats(int unitats) {
-        this.unitats = unitats;
-    }
-
-    public void setPreuProveidor(int preuProveidor) {
-        this.preuProveidor = preuProveidor;
-    }
-
-    public void setJugueta(Jugueta jugueta) {
-        this.jugueta = jugueta;
     }
 
     public int getId() {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public void setPreuProveidor(float preuProveidor) {
-        this.preuProveidor = preuProveidor;
-    }
-
-    public RegistreProv(int id, Date dataRegistre, int unitats, float preuProveidor, Jugueta jugueta) {
+    public RegistreProv(int id, Date dataRegistre, int unitats, float preuProveidor, String jugueta) {
         this.id = id;
         this.dataRegistre = dataRegistre;
         this.unitats = unitats;

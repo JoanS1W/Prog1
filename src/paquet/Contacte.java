@@ -5,11 +5,12 @@ package paquet;
  * @author Andreu Castell, Joan Serra, Salvador Vicens
  */
 public class Contacte {
-   private String nom;
-   private String telefon;
-   private String email;
-   private String zip;
-   private String direccio;
+
+    private String nom;
+    private String telefon;
+    private String email;
+    private String zip;
+    private String direccio;
 
     public String getTelefon() {
         return telefon;
@@ -27,28 +28,8 @@ public class Contacte {
         return direccio;
     }
 
-    public void setTelefon(String telefon) {
-        this.telefon = telefon;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public void setZip(String zip) {
-        this.zip = zip;
-    }
-
-    public void setDireccio(String direccio) {
-        this.direccio = direccio;
-    }
-
     public String getNom() {
         return nom;
-    }
-
-    public void setNom(String nom) {
-        this.nom = nom;
     }
 
     public Contacte(String nom, String telefon, String email, String zip, String direccio) {

@@ -5,6 +5,7 @@ package paquet;
  * @author Andreu Castell, Joan Serra, Salvador Vicens
  */
 public class Marca {
+
     private String nomMarca;
     private Contacte contacte;
 
@@ -14,14 +15,6 @@ public class Marca {
 
     public Contacte getContacte() {
         return contacte;
-    }
-    
-        public void setNomMarca(String nomMarca) {
-        this.nomMarca = nomMarca;
-    }
-
-    public void setContacte(Contacte contacte) {
-        this.contacte = contacte;
     }
 
     public Marca(String nomMarca, Contacte contacte) {

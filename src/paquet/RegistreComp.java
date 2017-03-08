@@ -13,7 +13,7 @@ public class RegistreComp {
     private int quantitat;
     private float preuReg;
     private int descompte;
-    private Jugueta jugueta;
+    private String jugueta;
 
     public Date getDataRegistre() {
         return dataRegistre;
@@ -47,12 +47,8 @@ public class RegistreComp {
         this.descompte = descompte;
     }
 
-    public Jugueta getJugueta() {
+    public String getJugueta() {
         return jugueta;
-    }
-
-    public void setJugueta(Jugueta jugueta) {
-        this.jugueta = jugueta;
     }
 
     public int getId() {
@@ -63,7 +59,7 @@ public class RegistreComp {
         this.id = id;
     }
 
-    public RegistreComp(int id, Date dataRegistre, int quantitat, float preuReg, int descompte, Jugueta jugueta) {
+    public RegistreComp(int id, Date dataRegistre, int quantitat, float preuReg, int descompte, String jugueta) {
         this.id = id;
         this.dataRegistre = dataRegistre;
         this.quantitat = quantitat;
