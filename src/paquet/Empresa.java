@@ -31,7 +31,7 @@ public class Empresa {
         proveidorArrayList();
     }
     
-    //Metode privat usat pel metode exercici11
+    //Metode 
     public Comprador cercaRegistre(String nom, Date data) {
         int llargaria = compradors.size();
         for (int i = 0; i < llargaria; i++) {
@@ -43,13 +43,13 @@ public class Empresa {
         return null;
     }
     //NOM MODIFICAR
-    //Metode per a resoldre la consulta 1
+    //Metode 
     public RegistreComp exercici11(String nom, Date data) {
         Comprador comprador = cercaRegistre(nom, data);
         return comprador.getRegistre();
     }
 
- //Metode privat usat pel metode exercici22
+ //Metode 
     private int exercici2(String nom, Date data) {
         int llargaria = registresComp.size();
         int llargaria2 = registresComp.size();
@@ -126,7 +126,7 @@ public class Empresa {
         int llargaria = juguetes.size();
         for (int i = 0; i < llargaria; i++) {
             Jugueta jug = juguetes.get(i);
-            if (jug.getNomJugueta().equals(nom)) {
+            if (jug.getNomJugueta().equalsIgnoreCase(nom)) {
                 return jug;
             }
         }
