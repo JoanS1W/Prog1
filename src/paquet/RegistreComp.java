@@ -1,5 +1,6 @@
 package paquet;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 /**
@@ -11,34 +12,27 @@ public class RegistreComp {
     //Atributs
     private int id;
     private Date dataRegistre;
-    private int quantitat;
-    private float preuReg;
     private int descompte;
-    private String jugueta;
+    private float preuReg;
+    private ArrayList<DetallFacturaComprador> detall;
+    
 
     //Metodes
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public Date getDataRegistre() {
         return dataRegistre;
     }
 
     public void setDataRegistre(Date dataRegistre) {
         this.dataRegistre = dataRegistre;
-    }
-
-    public int getQuantitat() {
-        return quantitat;
-    }
-
-    public void setQuantitat(int quantitat) {
-        this.quantitat = quantitat;
-    }
-
-    public float getPreuReg() {
-        return preuReg;
-    }
-
-    public void setPreuReg(float preuReg) {
-        this.preuReg = preuReg;
     }
 
     public int getDescompte() {
@@ -49,30 +43,35 @@ public class RegistreComp {
         this.descompte = descompte;
     }
 
-    public String getJugueta() {
-        return jugueta;
+    public float getPreuReg() {
+        return preuReg;
     }
 
-    public int getId() {
-        return id;
+    public void setPreuReg(float preuReg) {
+        this.preuReg = preuReg;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public ArrayList<DetallFacturaComprador> getDetall() {
+        return detall;
     }
 
-    public RegistreComp(int id, Date dataRegistre, int quantitat, float preuReg, int descompte, String jugueta) {
+    public void setDetall(ArrayList<DetallFacturaComprador> detall) {
+        this.detall = detall;
+    }
+
+    public RegistreComp(int id, Date dataRegistre, int descompte, float preuReg, ArrayList<DetallFacturaComprador> detall) {
         this.id = id;
         this.dataRegistre = dataRegistre;
-        this.quantitat = quantitat;
-        this.preuReg = preuReg;
         this.descompte = descompte;
-        this.jugueta = jugueta;
+        this.preuReg = preuReg;
+        this.detall = detall;
     }
 
     @Override
     public String toString() {
-        return "RegistreComp{" + "id=" + id + ", dataRegistre=" + dataRegistre + ", quantitat=" + quantitat + ", preuReg=" + preuReg + ", descompte=" + descompte + ", jugueta=" + jugueta + '}';
+        return "RegistreComp{" + "id=" + id + ", dataRegistre=" + dataRegistre + ", descompte=" + descompte + ", preuReg=" + preuReg + ", detall=" + detall + '}';
     }
 
-}
+
+
+}  

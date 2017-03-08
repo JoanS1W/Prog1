@@ -1,5 +1,6 @@
 package paquet;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 /**
@@ -11,42 +12,43 @@ public class RegistreProv {
     //Atributs
     private int id;
     private Date dataRegistre;
-    private int unitats;
-    private float preuProveidor;
-    private String jugueta;
+    private ArrayList<DetallFactura> detallRegistre;
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setDataRegistre(Date dataRegistre) {
+        this.dataRegistre = dataRegistre;
+    }
 
     //Metodes
-    public Date getDataRegistre() {
-        return dataRegistre;
+    public void setDetallRegistre(ArrayList detallRegistre) {
+        this.detallRegistre = detallRegistre;
     }
 
-    public int getUnitats() {
-        return unitats;
+    @Override
+    public String toString() {
+        return "RegistreProv{" + "id=" + id + ", dataRegistre=" + dataRegistre + ", detallRegistre=" + detallRegistre + '}';
     }
 
-    public float getPreuProveidor() {
-        return preuProveidor;
-    }
-
-    public String getJugueta() {
-        return jugueta;
+    public RegistreProv(int id, Date dataRegistre, ArrayList detallRegistre) {
+        this.id = id;
+        this.dataRegistre = dataRegistre;
+        this.detallRegistre = detallRegistre;
     }
 
     public int getId() {
         return id;
     }
 
-    public RegistreProv(int id, Date dataRegistre, int unitats, float preuProveidor, String jugueta) {
-        this.id = id;
-        this.dataRegistre = dataRegistre;
-        this.unitats = unitats;
-        this.preuProveidor = preuProveidor;
-        this.jugueta = jugueta;
+    public Date getDataRegistre() {
+        return dataRegistre;
     }
 
-    @Override
-    public String toString() {
-        return "RegistreProv{" + "id=" + id + ", dataRegistre=" + dataRegistre + ", unitats=" + unitats + ", preuProveidor=" + preuProveidor + ", jugueta=" + jugueta + '}';
+    public ArrayList getDetallRegistre() {
+        return detallRegistre;
     }
+
 
 }
