@@ -32,7 +32,7 @@ public class Empresa {
     }
     
     //Metode privat usat pel metode exercici11
-    public Comprador sercaRegistre(String nom, Date data) {
+    public Comprador cercaRegistre(String nom, Date data) {
         int llargaria = compradors.size();
         for (int i = 0; i < llargaria; i++) {
             Comprador comp = compradors.get(i);
@@ -42,10 +42,10 @@ public class Empresa {
         }
         return null;
     }
-
+    //NOM MODIFICAR
     //Metode per a resoldre la consulta 1
     public RegistreComp exercici11(String nom, Date data) {
-        Comprador comprador = sercaRegistre(nom, data);
+        Comprador comprador = cercaRegistre(nom, data);
         return comprador.getRegistre();
     }
 
@@ -69,22 +69,22 @@ public class Empresa {
     }*/
 
     //Metode per a trobar els atributs tipus de dins dels arrayList
-    public String trobaTipus(ArrayList<Tipus> llista, String nom) {
-        int llargaria = llista.size();
+    public Tipus trobaTipus(String nom) {
+        int llargaria = tipus.size();
         for (int i = 0; i < llargaria; i++) {
-            Tipus tip = llista.get(i);
+            Tipus tip = tipus.get(i);
             if (tip.getNomTipus().equals(nom)) {
-                return tip.getNomTipus();
+                return tip;
             }
         }
         return null;
     }
 
     //Metode per a trobar els atributs registreProv de dins dels arrayList
-    public RegistreProv trobaRegistreProv(ArrayList<RegistreProv> llista, int id) {
-        int llargaria = llista.size();
+    public RegistreProv trobaRegistreProv(int id) {
+        int llargaria = registresProv.size();
         for (int i = 0; i < llargaria; i++) {
-            RegistreProv regPro = llista.get(i);
+            RegistreProv regPro = registresProv.get(i);
             if (regPro.getId() == id) {
                 return regPro;
             }
@@ -93,10 +93,10 @@ public class Empresa {
     }
 
     //Metode per a trobar els atributs registreComp de dins dels arrayList
-    public RegistreComp trobaRegistreComp(ArrayList<RegistreComp> llista, int id) {
-        int llargaria = llista.size();
+    public RegistreComp trobaRegistreComp(int id) {
+        int llargaria = registresComp.size();
         for (int i = 0; i < llargaria; i++) {
-            RegistreComp regComp = llista.get(i);
+            RegistreComp regComp = registresComp.get(i);
             if (regComp.getId() == id) {
                 return regComp;
             }
@@ -105,10 +105,10 @@ public class Empresa {
     }
 
     //Metode per a trobar els atributs marca de dins dels arrayList
-    public Marca trobaMarca(ArrayList<Marca> llista, String nom) {
-        int llargaria = llista.size();
+    public Marca trobaMarca(String nom) {
+        int llargaria = marques.size();
         for (int i = 0; i < llargaria; i++) {
-            Marca mar = llista.get(i);
+            Marca mar = marques.get(i);
             if (mar.getNomMarca().equals(nom)) {
                 return mar;
             }
@@ -117,22 +117,22 @@ public class Empresa {
     }
 
     //Metode per a trobar els atributs jugueta de dins dels arrayList
-    public String trobaJugueta(ArrayList<Jugueta> llista, String nom) {
-        int llargaria = llista.size();
+    public Jugueta trobaJugueta(String nom) {
+        int llargaria = juguetes.size();
         for (int i = 0; i < llargaria; i++) {
-            Jugueta jug = llista.get(i);
+            Jugueta jug = juguetes.get(i);
             if (jug.getNomJugueta().equals(nom)) {
-                return jug.getNomJugueta();
+                return jug;
             }
         }
         return null;
     }
 
     //Metode per a trobar els atributs contacte de dins dels arrayList
-    public Contacte trobaContacte(ArrayList<Contacte> llista, String nom) {
-        int llargaria = llista.size();
+    public Contacte trobaContacte(String nom) {
+        int llargaria = contactes.size();
         for (int i = 0; i < llargaria; i++) {
-            Contacte cont = llista.get(i);
+            Contacte cont = contactes.get(i);
             if (cont.getNom().equals(nom)) {
                 return cont;
             }
@@ -141,10 +141,10 @@ public class Empresa {
     }
 
     //Metode per a trobar els atributs comprador de dins dels arrayList
-    public Comprador trobaComprador(ArrayList<Comprador> llista, String nom) {
-        int llargaria = llista.size();
+    public Comprador trobaComprador(String nom) {
+        int llargaria = compradors.size();
         for (int i = 0; i < llargaria; i++) {
-            Comprador comp = llista.get(i);
+            Comprador comp = compradors.get(i);
             if (comp.getNomComprador().equals(nom)) {
                 return comp;
             }
@@ -153,10 +153,10 @@ public class Empresa {
     }
 
     //Metode per a trobar els atributs proveidor de dins dels arrayList
-    public Proveidor trobaProveidor(ArrayList<Proveidor> llista, String nom) {
-        int llargaria = llista.size();
+    public Proveidor trobaProveidor(String nom) {
+        int llargaria = proveidors.size();
         for (int i = 0; i < llargaria; i++) {
-            Proveidor prov = llista.get(i);
+            Proveidor prov = proveidors.get(i);
             if (prov.getNomProveidor().equals(nom)) {
                 return prov;
             }
@@ -181,13 +181,13 @@ public class Empresa {
         Date b = new Date(116, 8, 15);
         Date c = new Date(116, 4, 18);
 
-        String NintendoNx = trobaJugueta(juguetes, "NintendoNx");
-        String PlayStation5 = trobaJugueta(juguetes, "PlayStation5");
-        String CastellPlaymobil = trobaJugueta(juguetes, "CastellPlaymobil");
+        Jugueta NintendoNx = trobaJugueta("NintendoNx");
+        Jugueta PlayStation5 = trobaJugueta("PlayStation5");
+        Jugueta CastellPlaymobil = trobaJugueta("CastellPlaymobil");
         
-        DetallFactura detallA = new DetallFactura("NintendoNx", 123, 4);
-        DetallFactura detallB = new DetallFactura("PlayStation5", 345, 3);
-        DetallFactura detallC = new DetallFactura("CastellPlaymobil", 86, 1);
+        DetallFactura detallA = new DetallFactura(NintendoNx, 123, 4);
+        DetallFactura detallB = new DetallFactura(PlayStation5, 345, 3);
+        DetallFactura detallC = new DetallFactura(CastellPlaymobil, 86, 1);
         
         ArrayList<DetallFactura> detall1 = new ArrayList<>();
         detall1.add(detallA);
@@ -213,13 +213,13 @@ public class Empresa {
         Date b = new Date(115, 8, 15);
         Date c = new Date(115, 4, 18);
 
-        String nintendoNx = trobaJugueta(juguetes, "NintendoNx");
-        String playStation5 = trobaJugueta(juguetes, "PlayStation5");
-        String castellPlaymobil = trobaJugueta(juguetes, "CastellPlaymobil");
+        Jugueta nintendoNx = trobaJugueta("NintendoNx");
+        Jugueta playStation5 = trobaJugueta("PlayStation5");
+        Jugueta castellPlaymobil = trobaJugueta("CastellPlaymobil");
         
-        DetallFacturaComprador detallA = new DetallFacturaComprador("NintendoNx", 123, 4);
-        DetallFacturaComprador detallB = new DetallFacturaComprador("PlayStation5", 345, 3);
-        DetallFacturaComprador detallC = new DetallFacturaComprador("CastellPlaymobil", 86, 1);
+        DetallFacturaComprador detallA = new DetallFacturaComprador(nintendoNx, 123, 4);
+        DetallFacturaComprador detallB = new DetallFacturaComprador(playStation5, 345, 3);
+        DetallFacturaComprador detallC = new DetallFacturaComprador(castellPlaymobil, 86, 1);
         
         ArrayList<DetallFacturaComprador> detall1 = new ArrayList<>();
         detall1.add(detallA);
@@ -241,9 +241,9 @@ public class Empresa {
 
     //Metode per omplir l'arrayList marca.
     public void marcaArrayList() {
-        Contacte marca1 = trobaContacte(contactes, "m1");
-        Contacte marca2 = trobaContacte(contactes, "m2");
-        Contacte marca3 = trobaContacte(contactes, "m3");
+        Contacte marca1 = trobaContacte("m1");
+        Contacte marca2 = trobaContacte("m2");
+        Contacte marca3 = trobaContacte("m3");
 
         Marca nintendo = new Marca("Nintendo", marca1);
         Marca playmobil = new Marca("Playmobil", marca2);
@@ -256,13 +256,13 @@ public class Empresa {
 
     //Metode per omplir l'arrayList jugueta.
     public void juguetaArrayList() {
-        Marca nintendo = trobaMarca(marques, "Nintendo");
-        Marca playmobil = trobaMarca(marques, "Playmobil");
-        Marca playstation = trobaMarca(marques, "Playstation");
+        Marca nintendo = trobaMarca("Nintendo");
+        Marca playmobil = trobaMarca("Playmobil");
+        Marca playstation = trobaMarca("Playstation");
 
-        String consola = trobaTipus(tipus, "Consola");
-        String construir = trobaTipus(tipus, "Construir");
-        String trencaclosques = trobaTipus(tipus, "Trencaclosques");
+        Tipus consola = trobaTipus("Consola");
+        Tipus construir = trobaTipus("Construir");
+        Tipus trencaclosques = trobaTipus("Trencaclosques");
 
         Jugueta nintendoNx = new Jugueta(320f, "NintendoNx", "Jugueta molt divertida", 25, Classificacio.C8_12, nintendo, consola);
         Jugueta playStation5 = new Jugueta(540f, "PlayStation5", "Jugueta de derrera generacio", 10, Classificacio.C8_12, playmobil, construir);
@@ -298,13 +298,13 @@ public class Empresa {
 
     //Metode per omplir l'arrayList comprador.
     public void compradorArrayList() {
-        RegistreComp registreCompA = trobaRegistreComp(registresComp, 1);
-        RegistreComp registreCompB = trobaRegistreComp(registresComp, 2);
-        RegistreComp registreCompC = trobaRegistreComp(registresComp, 3);
+        RegistreComp registreCompA = trobaRegistreComp(1);
+        RegistreComp registreCompB = trobaRegistreComp(2);
+        RegistreComp registreCompC = trobaRegistreComp(3);
 
-        Contacte comprador1 = trobaContacte(contactes, "c1");
-        Contacte comprador2 = trobaContacte(contactes, "c2");
-        Contacte comprador3 = trobaContacte(contactes, "c3");
+        Contacte comprador1 = trobaContacte("c1");
+        Contacte comprador2 = trobaContacte("c2");
+        Contacte comprador3 = trobaContacte("c3");
 
         Comprador compradorA = new Comprador("Pere Ramon Vives", registreCompA, comprador1);
         Comprador compradorB = new Comprador("Mateu Perez Munar", registreCompB, comprador2);
@@ -317,21 +317,25 @@ public class Empresa {
 
     //Metode per omplir l'arrayList proveidor.
     public void proveidorArrayList() {
-        RegistreProv registreProvA = trobaRegistreProv(registresProv, 1);
-        RegistreProv registreProvB = trobaRegistreProv(registresProv, 2);
-        RegistreProv registreProvC = trobaRegistreProv(registresProv, 3);
+        RegistreProv registreProvA = trobaRegistreProv(1);
+        RegistreProv registreProvB = trobaRegistreProv(2);
+        RegistreProv registreProvC = trobaRegistreProv(3);
 
-        Marca nintendo = trobaMarca(marques, "Nintendo");
-        Marca playmobil = trobaMarca(marques, "Playmobil");
-        Marca playstation = trobaMarca(marques, "Playstation");
-
-        Contacte proveidor1 = trobaContacte(contactes, "p1");
-        Contacte proveidor2 = trobaContacte(contactes, "p2");
-        Contacte proveidor3 = trobaContacte(contactes, "p3");
+        Marca nintendo = trobaMarca("Nintendo");
+        Marca playmobil = trobaMarca("Playmobil");
+        Marca playstation = trobaMarca("Playstation");
         
-        DetallFacturaComprador detallA = new DetallFacturaComprador("NintendoNx", 123, 4);
-        DetallFacturaComprador detallB = new DetallFacturaComprador("PlayStation5", 345, 3);
-        DetallFacturaComprador detallC = new DetallFacturaComprador("CastellPlaymobil", 86, 1);
+        Jugueta NintendoNx = trobaJugueta("NintendoNx");
+        Jugueta PlayStation5 = trobaJugueta("PlayStation5");
+        Jugueta CastellPlaymobil = trobaJugueta("CastellPlaymobil");
+
+        Contacte proveidor1 = trobaContacte("p1");
+        Contacte proveidor2 = trobaContacte("p2");
+        Contacte proveidor3 = trobaContacte("p3");
+        
+        DetallFacturaComprador detallA = new DetallFacturaComprador(NintendoNx, 123, 4);
+        DetallFacturaComprador detallB = new DetallFacturaComprador(PlayStation5, 345, 3);
+        DetallFacturaComprador detallC = new DetallFacturaComprador(CastellPlaymobil, 86, 1);
         
         ArrayList<DetallFacturaComprador> juguetesA = new ArrayList<>();
         juguetesA.add(detallA);

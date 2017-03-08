@@ -7,38 +7,26 @@ package paquet;
 
 /**
  *
- * @author salva
+ * @author Andreu Castell, Joan Serra, Salvador Vicens
  */
 public class DetallFacturaComprador {
-    private String jugueta;
+    private Jugueta jugueta;
     private float preuJugueta;
     private int quantitat;
 
-    public String getJugueta() {
+    public Jugueta getJugueta() {
         return jugueta;
-    }
-
-    public void setJugueta(String jugueta) {
-        this.jugueta = jugueta;
     }
 
     public float getPreuJugueta() {
         return preuJugueta;
     }
 
-    public void setPreuJugueta(float preuJugueta) {
-        this.preuJugueta = preuJugueta;
-    }
-
     public int getQuantitat() {
         return quantitat;
     }
 
-    public void setQuantitat(int quantitat) {
-        this.quantitat = quantitat;
-    }
-
-    public DetallFacturaComprador(String jugueta, float preuJugueta, int quantitat) {
+    public DetallFacturaComprador(Jugueta jugueta, float preuJugueta, int quantitat) {
         this.jugueta = jugueta;
         this.preuJugueta = preuJugueta;
         this.quantitat = quantitat;

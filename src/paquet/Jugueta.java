@@ -13,7 +13,7 @@ public class Jugueta {
     private int existencies;
     private Classificacio classificacio;
     private Marca marca;
-    private String tipus;
+    private Tipus tipus;
 
     //Metodes
     public float getPreuVentaJugueta() {
@@ -40,11 +40,11 @@ public class Jugueta {
         return marca;
     }
 
-    public String getTipus() {
+    public Tipus getTipus() {
         return tipus;
     }
 
-    public Jugueta(float preuVentaJugueta, String nomJugueta, String descripcioJugueta, int existencies, Classificacio classificacio, Marca marca, String tipus) {
+    public Jugueta(float preuVentaJugueta, String nomJugueta, String descripcioJugueta, int existencies, Classificacio classificacio, Marca marca, Tipus tipus) {
         this.preuVentaJugueta = preuVentaJugueta;
         this.nomJugueta = nomJugueta;
         this.descripcioJugueta = descripcioJugueta;

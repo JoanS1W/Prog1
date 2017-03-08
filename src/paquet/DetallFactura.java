@@ -7,14 +7,14 @@ package paquet;
 
 /**
  *
- * @author salva
+ * @author Andreu Castell, Joan Serra, Salvador Vicens
  */
 public class DetallFactura {
-    String jugueta;
-    float preu;
-    int quantitat;
+    private Jugueta jugueta;
+    private float preu;
+    private int quantitat;
 
-    public String getJugueta() {
+    public Jugueta getJugueta() {
         return jugueta;
     }
 
@@ -26,19 +26,7 @@ public class DetallFactura {
         return quantitat;
     }
 
-    public void setJugueta(String jugueta) {
-        this.jugueta = jugueta;
-    }
-
-    public void setPreu(float preu) {
-        this.preu = preu;
-    }
-
-    public void setQuantitat(int quantitat) {
-        this.quantitat = quantitat;
-    }
-
-    public DetallFactura(String jugueta, float preu, int quantitat) {
+    public DetallFactura(Jugueta jugueta, float preu, int quantitat) {
         this.jugueta = jugueta;
         this.preu = preu;
         this.quantitat = quantitat;
