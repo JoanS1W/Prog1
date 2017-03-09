@@ -1,6 +1,7 @@
 package paquet;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 /**
  *
@@ -69,7 +70,4 @@ public class Proveidor {
     public String toString() {
         return "Proveidor{" + "nomProveidor=" + nomProveidor + ", marca=" + marca + ", contacte=" + contacte + ", registre=" + registre + ", juguetes=" + juguetes + '}';
     }
-
-
-
 }

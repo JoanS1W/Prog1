@@ -10,10 +10,9 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Empresa o = new Empresa();
+        Empresa p = new Empresa();
         //Primera consulta
-        Date dataConsulta = new Date(115, 6, 24);
-        System.out.println(o.cercaRegistre("Pere Ramon Vives", dataConsulta));
+        System.out.println(p.juntaNomPreu("PlayStation5"));
 
         //Segona consulta
         //Date dataConsulta2 = new Date(115, 6, 24);

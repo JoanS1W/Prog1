@@ -18,6 +18,7 @@ public class Empresa {
     private ArrayList<Comprador> compradors = new ArrayList<>();
     private ArrayList<RegistreProv> registresProv = new ArrayList<>();
     private ArrayList<Proveidor> proveidors = new ArrayList<>();
+    private ArrayList<DetallFacturaComprador> prova = new ArrayList<>();
 
     //Metodes
     public Empresa() {
@@ -29,8 +30,55 @@ public class Empresa {
         contacteArrayList();
         compradorArrayList();
         proveidorArrayList();
+
     }
-    
+
+    private String sercaNom(String nomJugueta) {
+        int llargaria = proveidors.size();
+        for (int e = 0; e < llargaria; e++) {
+            Proveidor proveidor = proveidors.get(e);
+            int llargaria2 = proveidor.getJuguetes().size();
+            for (int i = 0; i < llargaria2; i++) {
+                if (proveidor.getJuguetes().get(i).getJugueta().getNomJugueta().equals(nomJugueta)) {
+                    return proveidor.getNomProveidor();
+                }
+            }
+        }
+        return null;
+    }
+
+    private float sercaPreu(String nomJugueta) {
+        int llargaria = proveidors.size();
+        for (int e = 0; e < llargaria; e++) {
+            Proveidor proveidor = proveidors.get(e);
+            int llargaria2 = proveidor.getJuguetes().size();
+            for (int i = 0; i < llargaria2; i++) {
+                proveidor.getJuguetes().get(i);
+                if (proveidor.getJuguetes().get(i).getJugueta().getNomJugueta().equals(nomJugueta)) {
+                    return proveidor.getJuguetes().get(i).getPreuJugueta();
+                }
+            }
+        }
+        return 0;
+    }
+
+    public String juntaNomPreu(String nomJugueta) {
+        int llargaria = proveidors.size();
+        for (int e = 0; e < llargaria; e++) {
+            Proveidor proveidor = proveidors.get(e);
+            int llargaria2 = proveidor.getJuguetes().size();
+            for (int i = 0; i < llargaria2; i++) {
+                proveidor.getJuguetes().get(i);
+                if (proveidor.getJuguetes().get(i).getJugueta().getNomJugueta().equals(nomJugueta)) {
+                    if(sercaPreu(nomJugueta)==0){
+                        return sercaNom(nomJugueta) + "   Preu: no definit";
+                    }else {return sercaNom(nomJugueta) + "   Preu:" + sercaPreu(nomJugueta) + "€";}
+                }
+            }
+        }
+        return "No hi ha ningú que disposi del producte";
+    }
+
     //Metode 
     public Comprador cercaRegistre(String nom, Date data) {
         int llargaria = compradors.size();
@@ -42,6 +90,7 @@ public class Empresa {
         }
         return null;
     }
+
     //NOM MODIFICAR
     //Metode 
     public RegistreComp exercici11(String nom, Date data) {
@@ -49,7 +98,7 @@ public class Empresa {
         return comprador.getRegistre();
     }
 
- //Metode 
+    /*Metode 
     private int exercici2(String nom, Date data) {
         int llargaria = registresComp.size();
         int llargaria2 = registresComp.size();
@@ -57,22 +106,18 @@ public class Empresa {
         for (int i = 0; i < llargaria; i++) {
             RegistreComp comp = registresComp.get(i);
             for (int e = 0; e < llargaria; e++) {
-            DetallFacturaComprador compr = DetallFacturaComprador.get(e);
-            if (comp.getDetall().equals(nom))
-            {
-                return compres = DetallFacturaComprador.getQuantitat();
+                DetallFacturaComprador compr = DetallFacturaComprador.get(e);
+                if (comp.getDetall().equals(nom)) {
+                    return compres = DetallFacturaComprador.getQuantitat();
+                }
             }
+            return 0;
         }
-        return 0;
-    }
-
-    //Metode per a resoldre la consulta 2
+        //Metode per a resoldre la consulta 2
     public int exercici22(String nom, Date data) {
         int conta = exercici2(nom, data);
         return conta;
-    }
-    
-    
+    }*/
     //Metode per a trobar els atributs tipus de dins dels arrayList
     public Tipus trobaTipus(String nom) {
         int llargaria = tipus.size();
@@ -189,17 +234,17 @@ public class Empresa {
         Jugueta NintendoNx = trobaJugueta("NintendoNx");
         Jugueta PlayStation5 = trobaJugueta("PlayStation5");
         Jugueta CastellPlaymobil = trobaJugueta("CastellPlaymobil");
-        
+
         DetallFactura detallA = new DetallFactura(NintendoNx, 123, 4);
         DetallFactura detallB = new DetallFactura(PlayStation5, 345, 3);
         DetallFactura detallC = new DetallFactura(CastellPlaymobil, 86, 1);
-        
+
         ArrayList<DetallFactura> detall1 = new ArrayList<>();
         detall1.add(detallA);
-        
+
         ArrayList<DetallFactura> detall2 = new ArrayList<>();
         detall2.add(detallB);
-        
+
         ArrayList<DetallFactura> detall3 = new ArrayList<>();
         detall3.add(detallC);
 
@@ -221,17 +266,17 @@ public class Empresa {
         Jugueta nintendoNx = trobaJugueta("NintendoNx");
         Jugueta playStation5 = trobaJugueta("PlayStation5");
         Jugueta castellPlaymobil = trobaJugueta("CastellPlaymobil");
-        
+
         DetallFacturaComprador detallA = new DetallFacturaComprador(nintendoNx, 123, 4);
         DetallFacturaComprador detallB = new DetallFacturaComprador(playStation5, 345, 3);
         DetallFacturaComprador detallC = new DetallFacturaComprador(castellPlaymobil, 86, 1);
-        
+
         ArrayList<DetallFacturaComprador> detall1 = new ArrayList<>();
         detall1.add(detallA);
-        
+
         ArrayList<DetallFacturaComprador> detall2 = new ArrayList<>();
         detall2.add(detallB);
-        
+
         ArrayList<DetallFacturaComprador> detall3 = new ArrayList<>();
         detall3.add(detallC);
 
@@ -329,7 +374,7 @@ public class Empresa {
         Marca nintendo = trobaMarca("Nintendo");
         Marca playmobil = trobaMarca("Playmobil");
         Marca playstation = trobaMarca("Playstation");
-        
+
         Jugueta NintendoNx = trobaJugueta("NintendoNx");
         Jugueta PlayStation5 = trobaJugueta("PlayStation5");
         Jugueta CastellPlaymobil = trobaJugueta("CastellPlaymobil");
@@ -337,18 +382,18 @@ public class Empresa {
         Contacte proveidor1 = trobaContacte("p1");
         Contacte proveidor2 = trobaContacte("p2");
         Contacte proveidor3 = trobaContacte("p3");
-        
+
         DetallFacturaComprador detallA = new DetallFacturaComprador(NintendoNx, 123, 4);
         DetallFacturaComprador detallB = new DetallFacturaComprador(PlayStation5, 345, 3);
         DetallFacturaComprador detallC = new DetallFacturaComprador(CastellPlaymobil, 86, 1);
-        
+
         ArrayList<DetallFacturaComprador> juguetesA = new ArrayList<>();
         juguetesA.add(detallA);
         ArrayList<DetallFacturaComprador> juguetesB = new ArrayList<>();
         juguetesA.add(detallB);
         ArrayList<DetallFacturaComprador> juguetesC = new ArrayList<>();
         juguetesA.add(detallC);
-        
+
         Proveidor proveidorA = new Proveidor("Pep Franxesc de la Vila", nintendo, proveidor1, registreProvA, juguetesA);
         Proveidor proveidorB = new Proveidor("Juanjo Ramon Catala", playmobil, proveidor2, registreProvB, juguetesB);
         Proveidor proveidorC = new Proveidor("Pere Llagosta Narcis", playstation, proveidor3, registreProvC, juguetesC);
