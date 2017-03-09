@@ -18,12 +18,12 @@ public class Main {
     public static void main(String[] args) {
 
         //Primera consulta
-        Date dataNecesaria = new Date(115, 6, 24);
+        Date dataNecesaria = new Date(117, 1, 21);
         Empresa p = new Empresa();
-        p.cercaRegistre("Pep Franxesc de la Vila", dataNecesaria);
+        System.out.println(p.cercaRegistre("Pere Ramon Vives", dataNecesaria));
 
         //Segona consulta
-        Date dataNecesaria2 = new Date(115, 8, 15);
+        Date dataNecesaria2 = new Date(117, 2, 14);
         System.out.println(p.tornaNumJuguetesVenudes("PlayStation5", dataNecesaria2));
 
         //Tercera consulta//Intentar modificar com surt la consulta
@@ -38,5 +38,7 @@ public class Main {
         Date dataSegonaInici = new Date(117, 1, 1);
         Date dataSegonaFinal = new Date(117, 1, 30);
         System.out.println(p.facturacioMesPassat("NintendoNx"));
+
+        //Sisena consulta
     }
 }

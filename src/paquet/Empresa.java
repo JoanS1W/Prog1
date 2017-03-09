@@ -42,9 +42,9 @@ public class Empresa {
             for (int i = 0; i < llargaria2; i++) {
                 if (proveidor.getJuguetes().get(i).getJugueta().getNomJugueta().equals(nomJugueta)) {
                     if (proveidor.getJuguetes().get(i).getPreu() == 0) {
-                        return proveidor.getNomProveidor() + " Preu: no definit";
+                        return "El proveidor " + proveidor.getNomProveidor() + " | Preu: no definit";
                     } else {
-                        return proveidor.getNomProveidor() + " Preu:" + proveidor.getJuguetes().get(i).getPreu() + "€";
+                        return "El proveidor " + proveidor.getNomProveidor() + " | Preu:" + proveidor.getJuguetes().get(i).getPreu() + "€";
                     }
                 }
             }
@@ -58,7 +58,7 @@ public class Empresa {
         for (int i = 0; i < llargaria; i++) {
             Comprador comp = compradors.get(i);
             int llargaria2 = comp.getRegistre().size();
-            for (int e = 0; e < llargaria2; e++) {
+            for (int e = 0; e < llargaria2; e++) {//                       Aquesta i d'aqui baix no hauria de ser una e? Segueix sense funcionar tho
                 if (comp.getNomComprador().equals(nom) && comp.getRegistre().get(i).getDataRegistre().equals(data)) {
                     return comp.getRegistre();
                 }
@@ -114,11 +114,10 @@ public class Empresa {
             Comprador comp = compradors.get(i);
             int llargaria2 = comp.getRegistre().size();
             for (int e = 0; e < llargaria2; e++) {
-                if (comp.getNomComprador().equals(nomComprador) && (comp.getRegistre().get(e).getDataRegistre().after(data1) && comp.getRegistre().get(e).getDataRegistre().before(data2))) {
+                if (comp.getNomComprador().equals(nomComprador) && (comp.getRegistre().get(e).getDataRegistre().before(data1) && comp.getRegistre().get(e).getDataRegistre().after(data2))) {
                     return total + comp.getRegistre().get(e).getPreuReg();
                 }
             }
-
         }
         return 0;
     }
@@ -294,7 +293,6 @@ public class Empresa {
         this.registresComp.add(registreCompA);
         this.registresComp.add(registreCompB);
         this.registresComp.add(registreCompC);
-
     }
 
     //Metode per omplir l'arrayList marca.
@@ -324,13 +322,11 @@ public class Empresa {
 
         Jugueta nintendoNx = new Jugueta(320f, "NintendoNx", "Jugueta molt divertida", 25, Classificacio.C8_12, nintendo, consola);
         Jugueta playStation5 = new Jugueta(540f, "PlayStation5", "Jugueta de derrera generacio", 10, Classificacio.C8_12, playmobil, construir);
-        Jugueta castellPlaymobil = new Jugueta(125, "CastellPlaymobil", "Jugueta perfecta per nins petits", 14, Classificacio.C4_8, playstation, trencaclosques);
+        Jugueta castellPlaymobil = new Jugueta(125f, "CastellPlaymobil", "Jugueta perfecta per nins petits", 14, Classificacio.C4_8, playstation, trencaclosques);
 
         this.juguetes.add(nintendoNx);
         this.juguetes.add(playStation5);
         this.juguetes.add(castellPlaymobil);
-        //borrar
-        System.out.println(nintendoNx);
     }
 
     //Metode per omplir l'arrayList contacte.
@@ -407,9 +403,9 @@ public class Empresa {
         ArrayList<DetallProveidor> juguetesA = new ArrayList<>();
         juguetesA.add(detallA);
         ArrayList<DetallProveidor> juguetesB = new ArrayList<>();
-        juguetesA.add(detallB);
+        juguetesB.add(detallB);
         ArrayList<DetallProveidor> juguetesC = new ArrayList<>();
-        juguetesA.add(detallC);
+        juguetesC.add(detallC);
 
         Proveidor proveidorA = new Proveidor("Pep Franxesc de la Vila", nintendo, proveidor1, registreProvA, juguetesA);
         Proveidor proveidorB = new Proveidor("Juanjo Ramon Catala", playmobil, proveidor2, registreProvB, juguetesB);
