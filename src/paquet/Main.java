@@ -9,10 +9,10 @@ import java.util.Date;
 public class Main {
 
     public static void main(String[] args) {
-
+        Date dataConsulta2 = new Date(115, 6, 24);
         Empresa p = new Empresa();
         //Primera consulta
-        System.out.println(p.juntaNomPreu("PlayStation5"));
+        System.out.println(p.preuJuguetaProveidor("PlayStation5"));
 
         //Segona consulta
         //Date dataConsulta2 = new Date(115, 6, 24);
