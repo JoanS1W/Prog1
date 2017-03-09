@@ -8,11 +8,14 @@ import java.util.Date;
  */
 public class Main {
 
-    public static void main(String[] args) {
+    //Metodes per a fer proves amb les classes:
+    //Classificació es una enumeració, no fa falta fer proves.
+    //Comprador:
+    /*public void provaComprador() {
+        Comprador prova = new Comprador("NomComprador", registre, contacte);
         
-        //Metodes per a fer proves amb les classes:
-        //Classificació es una enumeració, no fa falta fer proves.
-        //
+    }*/
+    public static void main(String[] args) {
 
         //Primera consulta
         Date dataNecesaria = new Date(115, 6, 24);
@@ -25,5 +28,15 @@ public class Main {
 
         //Tercera consulta//Intentar modificar com surt la consulta
         System.out.println(p.preuJuguetaProveidor("CastellPlaymobil"));
+
+        //Quarta consulta
+        Date dataInici = new Date(117, 2, 1);
+        Date dataFinal = new Date(117, 2, 30);
+        System.out.println(p.facturacioMensual("Mateu Perez Munar", dataInici, dataFinal));
+
+        //Cinquena consulta
+        Date dataSegonaInici = new Date(117, 1, 1);
+        Date dataSegonaFinal = new Date(117, 1, 30);
+        System.out.println(p.facturacioMesPassat("NintendoNx"));
     }
 }

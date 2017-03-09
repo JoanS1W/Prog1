@@ -1,7 +1,9 @@
 package paquet;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
+import java.util.GregorianCalendar;
 
 /**
  *
@@ -82,6 +84,45 @@ public class Empresa {
         return "De " + nomJugueta + " no s'han comprat cap unitats";
     }
 
+    //
+    public float facturacioMesPassat(String nomJugueta) {
+        float facturacio = 0;
+        int llargaria = compradors.size();
+        for (int i = 0; i < llargaria; i++) {
+            Comprador comp = compradors.get(i);
+            int llargaria2 = comp.getRegistre().size();
+            Calendar c = new GregorianCalendar();
+            int meses = (c.get(Calendar.MONTH));
+            int ano = (c.get(Calendar.YEAR));
+            Date data = new Date((ano - 1900), (meses - 1), 1);
+            Date data2 = new Date((ano - 1900), (meses - 1), 31);
+            for (int e = 0; e < llargaria2; e++) {
+                if (comp.getRegistre().get(i).getDataRegistre().after(data) && comp.getRegistre().get(i).getDataRegistre().before(data2) && comp.getRegistre().get(i).getDetall().get(e).getJugueta().getNomJugueta().equals(nomJugueta)) {
+                    float suma = (comp.getRegistre().get(i).getDetall().get(e).getPreuJugueta() * comp.getRegistre().get(i).getDetall().get(e).getPreuJugueta());
+                    return facturacio + suma;
+                }
+            }
+        }
+        return 0;
+    }
+
+    //
+    public float facturacioMensual(String nomComprador, Date data1, Date data2) {
+        float total = 0;
+        int llargaria = compradors.size();
+        for (int i = 0; i < llargaria; i++) {
+            Comprador comp = compradors.get(i);
+            int llargaria2 = comp.getRegistre().size();
+            for (int e = 0; e < llargaria2; e++) {
+                if (comp.getNomComprador().equals(nomComprador) && (comp.getRegistre().get(e).getDataRegistre().after(data1) && comp.getRegistre().get(e).getDataRegistre().before(data2))) {
+                    return total + comp.getRegistre().get(e).getPreuReg();
+                }
+            }
+
+        }
+        return 0;
+    }
+
     //Metode per a trobar els atributs tipus de dins dels arrayList
     public Tipus trobaTipus(String nom) {
         int llargaria = tipus.size();
@@ -92,22 +133,6 @@ public class Empresa {
             }
         }
         return null;
-    }
-
-    //
-    public float facturacioMensual(String nomComprador, Date data1, Date data2) {
-        int llargaria = compradors.size();
-        for (int i = 0; i < llargaria; i++) {
-            Comprador comp = compradors.get(i);
-            int llargaria2 = comp.getRegistre().size();
-            for (int e = 0; e < llargaria2; e++) {
-                if (comp.getNomComprador().equals(nomComprador) && (comp.getRegistre().get(e).getDataRegistre().after(data1) && comp.getRegistre().get(e).getDataRegistre().before(data2))) {
-                    comp.getRegistre().size();
-                }
-            }
-
-        }
-        return 0;
     }
 
     //Metode per a trobar els atributs registreProv de dins dels arrayList
@@ -207,9 +232,9 @@ public class Empresa {
 
     //Metode per omplir l'arrayList registreProv.
     public void registreProvArrayList() {
-        Date a = new Date(116, 6, 24);
-        Date b = new Date(116, 8, 15);
-        Date c = new Date(116, 4, 18);
+        Date a = new Date(117, 6, 24);
+        Date b = new Date(117, 8, 15);
+        Date c = new Date(117, 4, 18);
 
         Jugueta NintendoNx = trobaJugueta("NintendoNx");
         Jugueta PlayStation5 = trobaJugueta("PlayStation5");
@@ -241,9 +266,9 @@ public class Empresa {
     public void registreCompArrayList() {
         int descompte = 3;
 
-        Date a = new Date(115, 6, 24);
-        Date b = new Date(115, 8, 15);
-        Date c = new Date(115, 4, 18);
+        Date a = new Date(117, 1, 21);
+        Date b = new Date(117, 2, 14);
+        Date c = new Date(117, 4, 18);
 
         Jugueta nintendoNx = trobaJugueta("NintendoNx");
         Jugueta playStation5 = trobaJugueta("PlayStation5");
