@@ -40,9 +40,9 @@ public class Empresa {
             for (int i = 0; i < llargaria2; i++) {
                 if (proveidor.getJuguetes().get(i).getJugueta().getNomJugueta().equals(nomJugueta)) {
                     if (proveidor.getJuguetes().get(i).getPreu() == 0) {
-                        return proveidor.getNomProveidor() + "   Preu: no definit";
+                        return proveidor.getNomProveidor() + " Preu: no definit";
                     } else {
-                        return proveidor.getNomProveidor() + "   Preu:" + proveidor.getJuguetes().get(i).getPreu() + "€";
+                        return proveidor.getNomProveidor() + " Preu:" + proveidor.getJuguetes().get(i).getPreu() + "€";
                     }
                 }
             }
