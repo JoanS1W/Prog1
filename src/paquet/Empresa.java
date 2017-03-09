@@ -23,14 +23,13 @@ public class Empresa {
     //Metodes
     public Empresa() {
         tipusArrayList();
-        registreProvArrayList();
-        registreCompArrayList();
+        contacteArrayList();
         marcaArrayList();
         juguetaArrayList();
-        contacteArrayList();
+        registreCompArrayList();
         compradorArrayList();
+        registreProvArrayList();
         proveidorArrayList();
-
     }
 
     public String preuJuguetaProveidor(String nomJugueta) {
@@ -52,26 +51,18 @@ public class Empresa {
     }
 
     //Metode 
-    public Comprador cercaRegistre(String nom, Date data) {
+    public RegistreComp cercaRegistre(String nom, Date data) {
         int llargaria = compradors.size();
         for (int i = 0; i < llargaria; i++) {
             Comprador comp = compradors.get(i);
-            if (comp.getNomComprador().equals(nom)) {
-                return comp;
+            if (comp.getNomComprador().equals(nom) && comp.getRegistre().getDataRegistre().equals(data)) {
+                return comp.getRegistre();
             }
         }
         return null;
     }
 
-    //NOM MODIFICAR
-    //Metode 
-    public RegistreComp exercici11(String nom, Date data) {
-        Comprador comprador = cercaRegistre(nom, data);
-        return comprador.getRegistre();
-    }
-
     //Metode
-
     public int tornaNumJuguetesVenudes(String nomJugueta, Date data) {
         int llargaria = registresComp.size();
         int compres = 0;
@@ -79,7 +70,7 @@ public class Empresa {
             RegistreComp registre = registresComp.get(i);
             int llargaria2 = registre.getDetall().size();
             for (int e = 0; e < llargaria2; e++) {
-                if (registre.getDetall().get(e).getJugueta().getNomJugueta().equals(nomJugueta)) {
+                if (registre.getDetall().get(e).getJugueta().getNomJugueta().equals(nomJugueta) && registre.getDataRegistre().equals(data)) {
                     return compres + registre.getDetall().get(e).getQuantitat();
                 }
             }
@@ -248,18 +239,17 @@ public class Empresa {
 
         ArrayList<DetallFacturaComprador> detall3 = new ArrayList<>();
         detall3.add(detallC);
-        
+
         int descompte = 3;
-        
-        RegistreComp registreCompA = new RegistreComp(1, a, descompte, (((100-descompte)/100)*(detallA.getPreuJugueta()*detallA.getQuantitat())), detall1);
-        RegistreComp registreCompB = new RegistreComp(2, b, descompte, (((100-descompte)/100)*(detallB.getPreuJugueta()*detallB.getQuantitat())), detall2);
-        RegistreComp registreCompC = new RegistreComp(3, c, descompte, (((100-descompte)/100)*(detallC.getPreuJugueta()*detallC.getQuantitat())), detall3);
+
+        RegistreComp registreCompA = new RegistreComp(1, a, descompte, (((100 - descompte) / 100) * (detallA.getPreuJugueta() * detallA.getQuantitat())), detall1);
+        RegistreComp registreCompB = new RegistreComp(2, b, descompte, (((100 - descompte) / 100) * (detallB.getPreuJugueta() * detallB.getQuantitat())), detall2);
+        RegistreComp registreCompC = new RegistreComp(3, c, descompte, (((100 - descompte) / 100) * (detallC.getPreuJugueta() * detallC.getQuantitat())), detall3);
 
         this.registresComp.add(registreCompA);
         this.registresComp.add(registreCompB);
         this.registresComp.add(registreCompC);
-        
-        System.out.print(detall1);
+
     }
 
     //Metode per omplir l'arrayList marca.
@@ -294,7 +284,8 @@ public class Empresa {
         this.juguetes.add(nintendoNx);
         this.juguetes.add(playStation5);
         this.juguetes.add(castellPlaymobil);
-        
+        //borrar
+        System.out.println(nintendoNx);
     }
 
     //Metode per omplir l'arrayList contacte.

@@ -9,13 +9,15 @@ import java.util.Date;
 public class Main {
 
     public static void main(String[] args) {
-        Date dataConsulta2 = new Date(115, 6, 24);
-        Empresa p = new Empresa();
         //Primera consulta
-        p.registreCompArrayList();
+        Date dataNecesaria = new Date(115, 6, 24);
+        Empresa p = new Empresa();
+        p.cercaRegistre("Pep Franxesc de la Vila", dataNecesaria);
 
         //Segona consulta
-        //Date dataConsulta2 = new Date(115, 6, 24);
-        //System.out.println(o.exercici22("PlayStation5", dataConsulta2));
+        Date dataNecesaria2 = new Date(115, 8, 15);
+        System.out.println(p.tornaNumJuguetesVenudes("PlayStation5", dataNecesaria2));
+
+        //Tercera consulta
     }
 }
