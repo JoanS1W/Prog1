@@ -1,5 +1,7 @@
 package paquet;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Andreu Castell, Joan Serra, Salvador Vicens
@@ -8,7 +10,7 @@ public class Comprador {
 
     //Atributs
     private String nomComprador;
-    private RegistreComp registre;
+    private ArrayList<RegistreComp> registre;
     private Contacte contacte;
 
     //Metodes
@@ -16,7 +18,7 @@ public class Comprador {
         return nomComprador;
     }
 
-    public RegistreComp getRegistre() {
+    public ArrayList<RegistreComp> getRegistre() {
         return registre;
     }
 
@@ -24,7 +26,7 @@ public class Comprador {
         return contacte;
     }
 
-    public Comprador(String nomComprador, RegistreComp registre, Contacte contacte) {
+    public Comprador(String nomComprador, ArrayList<RegistreComp> registre, Contacte contacte) {
         this.nomComprador = nomComprador;
         this.registre = registre;
         this.contacte = contacte;

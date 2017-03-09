@@ -51,19 +51,22 @@ public class Empresa {
     }
 
     //Metode 
-    public RegistreComp cercaRegistre(String nom, Date data) {
+    public ArrayList<RegistreComp> cercaRegistre(String nom, Date data) {
         int llargaria = compradors.size();
         for (int i = 0; i < llargaria; i++) {
             Comprador comp = compradors.get(i);
-            if (comp.getNomComprador().equals(nom) && comp.getRegistre().getDataRegistre().equals(data)) {
-                return comp.getRegistre();
+            int llargaria2 = comp.getRegistre().size();
+            for (int e = 0; e < llargaria2; e++) {
+                if (comp.getNomComprador().equals(nom) && comp.getRegistre().get(i).getDataRegistre().equals(data)) {
+                    return comp.getRegistre();
+                }
             }
         }
         return null;
     }
 
     //Metode
-    public int tornaNumJuguetesVenudes(String nomJugueta, Date data) {
+    public String tornaNumJuguetesVenudes(String nomJugueta, Date data) {
         int llargaria = registresComp.size();
         int compres = 0;
         for (int i = 0; i < llargaria; i++) {
@@ -71,11 +74,12 @@ public class Empresa {
             int llargaria2 = registre.getDetall().size();
             for (int e = 0; e < llargaria2; e++) {
                 if (registre.getDetall().get(e).getJugueta().getNomJugueta().equals(nomJugueta) && registre.getDataRegistre().equals(data)) {
-                    return compres + registre.getDetall().get(e).getQuantitat();
+                    compres = compres + registre.getDetall().get(e).getQuantitat();
+                    return "De " + nomJugueta + " s'han comprat " + compres + " unitats";
                 }
             }
         }
-        return compres;
+        return "De " + nomJugueta + " no s'han comprat cap unitats";
     }
 
     //Metode per a trobar els atributs tipus de dins dels arrayList
@@ -88,6 +92,22 @@ public class Empresa {
             }
         }
         return null;
+    }
+
+    //
+    public float facturacioMensual(String nomComprador, Date data1, Date data2) {
+        int llargaria = compradors.size();
+        for (int i = 0; i < llargaria; i++) {
+            Comprador comp = compradors.get(i);
+            int llargaria2 = comp.getRegistre().size();
+            for (int e = 0; e < llargaria2; e++) {
+                if (comp.getNomComprador().equals(nomComprador) && (comp.getRegistre().get(e).getDataRegistre().after(data1) && comp.getRegistre().get(e).getDataRegistre().before(data2))) {
+                    comp.getRegistre().size();
+                }
+            }
+
+        }
+        return 0;
     }
 
     //Metode per a trobar els atributs registreProv de dins dels arrayList
@@ -220,7 +240,7 @@ public class Empresa {
     //Metode per omplir l'arrayList registreComp.
     public void registreCompArrayList() {
         int descompte = 3;
-        
+
         Date a = new Date(115, 6, 24);
         Date b = new Date(115, 8, 15);
         Date c = new Date(115, 4, 18);
@@ -317,13 +337,20 @@ public class Empresa {
         RegistreComp registreCompB = trobaRegistreComp(2);
         RegistreComp registreCompC = trobaRegistreComp(3);
 
+        ArrayList<RegistreComp> registre1 = new ArrayList<>();
+        registre1.add(registreCompA);
+        ArrayList<RegistreComp> registre2 = new ArrayList<>();
+        registre1.add(registreCompB);
+        ArrayList<RegistreComp> registre3 = new ArrayList<>();
+        registre1.add(registreCompC);
+
         Contacte comprador1 = trobaContacte("c1");
         Contacte comprador2 = trobaContacte("c2");
         Contacte comprador3 = trobaContacte("c3");
 
-        Comprador compradorA = new Comprador("Pere Ramon Vives", registreCompA, comprador1);
-        Comprador compradorB = new Comprador("Mateu Perez Munar", registreCompB, comprador2);
-        Comprador compradorC = new Comprador("Josep Quetglas Esteve", registreCompC, comprador3);
+        Comprador compradorA = new Comprador("Pere Ramon Vives", registre1, comprador1);
+        Comprador compradorB = new Comprador("Mateu Perez Munar", registre2, comprador2);
+        Comprador compradorC = new Comprador("Josep Quetglas Esteve", registre3, comprador3);
 
         this.compradors.add(compradorA);
         this.compradors.add(compradorB);
