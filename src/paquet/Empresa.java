@@ -219,6 +219,8 @@ public class Empresa {
 
     //Metode per omplir l'arrayList registreComp.
     public void registreCompArrayList() {
+        int descompte = 3;
+        
         Date a = new Date(115, 6, 24);
         Date b = new Date(115, 8, 15);
         Date c = new Date(115, 4, 18);
@@ -239,8 +241,6 @@ public class Empresa {
 
         ArrayList<DetallFacturaComprador> detall3 = new ArrayList<>();
         detall3.add(detallC);
-
-        int descompte = 3;
 
         RegistreComp registreCompA = new RegistreComp(1, a, descompte, (((100 - descompte) / 100) * (detallA.getPreuJugueta() * detallA.getQuantitat())), detall1);
         RegistreComp registreCompB = new RegistreComp(2, b, descompte, (((100 - descompte) / 100) * (detallB.getPreuJugueta() * detallB.getQuantitat())), detall2);
