@@ -57,5 +57,5 @@ public class Jugueta {
     @Override
     public String toString() {
         return "Jugueta{" + "preuVentaJugueta=" + preuVentaJugueta + ", nomJugueta=" + nomJugueta + ", descripcioJugueta=" + descripcioJugueta + ", existencies=" + existencies + ", classificacio=" + classificacio + ", marca=" + marca + ", tipus=" + tipus + '}';
-    }
+    }    
 }

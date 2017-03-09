@@ -12,7 +12,7 @@ public class RegistreProv {
     //Atributs
     private int id;
     private Date dataRegistre;
-    private ArrayList<DetallFactura> detallRegistre;
+    private ArrayList<DetallProveidor> detallRegistre;
 
     public void setId(int id) {
         this.id = id;

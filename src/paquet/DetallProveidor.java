@@ -9,7 +9,7 @@ package paquet;
  *
  * @author Andreu Castell, Joan Serra, Salvador Vicens
  */
-public class DetallFactura {
+public class DetallProveidor {
     private Jugueta jugueta;
     private float preu;
     private int quantitat;
@@ -26,7 +26,7 @@ public class DetallFactura {
         return quantitat;
     }
 
-    public DetallFactura(Jugueta jugueta, float preu, int quantitat) {
+    public DetallProveidor(Jugueta jugueta, float preu, int quantitat) {
         this.jugueta = jugueta;
         this.preu = preu;
         this.quantitat = quantitat;

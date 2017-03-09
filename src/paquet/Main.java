@@ -12,7 +12,7 @@ public class Main {
         Date dataConsulta2 = new Date(115, 6, 24);
         Empresa p = new Empresa();
         //Primera consulta
-        System.out.println(p.preuJuguetaProveidor("PlayStation5"));
+        p.registreCompArrayList();
 
         //Segona consulta
         //Date dataConsulta2 = new Date(115, 6, 24);

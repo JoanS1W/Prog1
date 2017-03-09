@@ -14,7 +14,7 @@ public class Proveidor {
     private Marca marca;
     private Contacte contacte;
     private RegistreProv registre;
-    private ArrayList<DetallFacturaComprador> juguetes;
+    private ArrayList<DetallProveidor> juguetes;
 
     //Metodes
 
@@ -50,15 +50,15 @@ public class Proveidor {
         this.registre = registre;
     }
 
-    public ArrayList<DetallFacturaComprador> getJuguetes() {
+    public ArrayList<DetallProveidor> getJuguetes() {
         return juguetes;
     }
 
-    public void setJuguetes(ArrayList<DetallFacturaComprador> juguetes) {
+    public void setJuguetes(ArrayList<DetallProveidor> juguetes) {
         this.juguetes = juguetes;
     }
 
-    public Proveidor(String nomProveidor, Marca marca, Contacte contacte, RegistreProv registre, ArrayList<DetallFacturaComprador> juguetes) {
+    public Proveidor(String nomProveidor, Marca marca, Contacte contacte, RegistreProv registre, ArrayList<DetallProveidor> juguetes) {
         this.nomProveidor = nomProveidor;
         this.marca = marca;
         this.contacte = contacte;
