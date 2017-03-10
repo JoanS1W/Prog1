@@ -1,5 +1,6 @@
 package paquet;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 /**
@@ -32,13 +33,15 @@ public class Main {
         //Quarta consulta
         Date dataInici = new Date(117, 1, 1);
         Date dataFinal = new Date(117, 2, 30);
-        System.out.println(p.facturacioMensual("Pere Ramon Vives", dataInici, dataFinal));
+        System.out.println(p.facturacioMensualClient("Pere Ramon Vives", dataInici, dataFinal));
 
         //Cinquena consulta
-        Date dataSegonaInici = new Date(117, 1, 1);
-        Date dataSegonaFinal = new Date(117, 1, 30);
-        System.out.println(p.facturacioMesPassat("NintendoNx"));
-        p.registreCompArrayList();
+        System.out.println(p.facturacioJuguetaMesPassat("NintendoNx"));
         //Sisena consulta
+        ArrayList<String> llistaJuguetesMarca = new ArrayList<>();
+        llistaJuguetesMarca = p.juguetesMarca("Nintendo");
+        for (int i = 0; i < llistaJuguetesMarca.size(); i++) {
+            System.out.println(llistaJuguetesMarca.get(i));
+        }
     }
 }

@@ -22,41 +22,26 @@ public class Proveidor {
         return nomProveidor;
     }
 
-    public void setNomProveidor(String nomProveidor) {
-        this.nomProveidor = nomProveidor;
-    }
 
     public Marca getMarca() {
         return marca;
     }
 
-    public void setMarca(Marca marca) {
-        this.marca = marca;
-    }
 
     public Contacte getContacte() {
         return contacte;
     }
 
-    public void setContacte(Contacte contacte) {
-        this.contacte = contacte;
-    }
 
     public RegistreProv getRegistre() {
         return registre;
     }
 
-    public void setRegistre(RegistreProv registre) {
-        this.registre = registre;
-    }
 
     public ArrayList<DetallProveidor> getJuguetes() {
         return juguetes;
     }
 
-    public void setJuguetes(ArrayList<DetallProveidor> juguetes) {
-        this.juguetes = juguetes;
-    }
 
     public Proveidor(String nomProveidor, Marca marca, Contacte contacte, RegistreProv registre, ArrayList<DetallProveidor> juguetes) {
         this.nomProveidor = nomProveidor;

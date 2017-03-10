@@ -85,7 +85,7 @@ public class Empresa {
     }
 
     //
-    public float facturacioMesPassat(String nomJugueta) {
+    public float facturacioJuguetaMesPassat(String nomJugueta) {
         float facturacio = 0;
         int llargaria = compradors.size();
         for (int i = 0; i < llargaria; i++) {
@@ -98,7 +98,7 @@ public class Empresa {
             Date data2 = new Date((ano - 1900), (meses - 1), 31);
             for (int e = 0; e < llargaria2; e++) {
                 if (comp.getRegistre().get(i).getDataRegistre().after(data) && comp.getRegistre().get(i).getDataRegistre().before(data2) && comp.getRegistre().get(i).getDetall().get(e).getJugueta().getNomJugueta().equals(nomJugueta)) {
-                    float suma = (comp.getRegistre().get(i).getDetall().get(e).getPreuJugueta() * comp.getRegistre().get(i).getDetall().get(e).getPreuJugueta());
+                    float suma = (comp.getRegistre().get(i).getDetall().get(e).getPreuJugueta() * comp.getRegistre().get(i).getDetall().get(e).getQuantitat());
                     return facturacio + suma;
                 }
             }
@@ -107,7 +107,7 @@ public class Empresa {
     }
 
     //
-    public double facturacioMensual(String nomComprador, Date data1, Date data2) {
+    public double facturacioMensualClient(String nomComprador, Date data1, Date data2) {
         float total = 0;
         int llargaria = compradors.size();
         for (int i = 0; i < llargaria; i++) {
@@ -120,6 +120,18 @@ public class Empresa {
             }
         }
         return 0;
+    }
+    
+    public ArrayList<String> juguetesMarca(String nomMarca){
+        ArrayList<String> llistaJuguetes = new ArrayList<>();
+        int llargaria = juguetes.size();
+        for (int i = 0; i < llargaria; i++) {
+            Jugueta jugueta = juguetes.get(i);
+            if(jugueta.getMarca().getNomMarca().equals(nomMarca)){
+                llistaJuguetes.add(jugueta.getNomJugueta());
+            }
+        }
+        return llistaJuguetes;
     }
 
     //Metode per a trobar els atributs tipus de dins dels arrayList
