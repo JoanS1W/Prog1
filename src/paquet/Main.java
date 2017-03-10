@@ -42,10 +42,10 @@ public class Main {
         //Quarta consulta
         Date dataInici = new Date(117, 1, 1);
         Date dataFinal = new Date(117, 2, 30);
-        System.out.println(p.facturacioMensualClient("Pere Ramon Vives", dataInici, dataFinal));
+        System.out.println(p.facturacioMensualClient("Pere Ramon Vives", dataInici, dataFinal)+"€");
 
         //Cinquena consulta
-        System.out.println(p.facturacioJuguetaMesPassat("NintendoNx"));
+        System.out.println(p.facturacioJuguetaMesPassat("NintendoNx")+"€");
 
         //Sisena consulta
         ArrayList<String> llistaJuguetesMarca = p.juguetesMarca("Nintendo");
