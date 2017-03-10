@@ -53,14 +53,14 @@ public class Empresa {
     }
 
     //Metode 
-    public ArrayList<RegistreComp> cercaRegistre(String nom, Date data) {
+    public RegistreComp cercaRegistre(String nom, Date data) {
         int llargaria = compradors.size();
         for (int i = 0; i < llargaria; i++) {
             Comprador comp = compradors.get(i);
             int llargaria2 = comp.getRegistre().size();
             for (int e = 0; e < llargaria2; e++) {//                       Aquesta i d'aqui baix no hauria de ser una e? Segueix sense funcionar tho
-                if (comp.getNomComprador().equals(nom) && comp.getRegistre().get(i).getDataRegistre().equals(data)) {
-                    return comp.getRegistre();
+                if (comp.getNomComprador().equals(nom) && comp.getRegistre().get(e).getDataRegistre().equals(data)) {
+                    return comp.getRegistre().get(e);
                 }
             }
         }
@@ -239,9 +239,9 @@ public class Empresa {
         Jugueta PlayStation5 = trobaJugueta("PlayStation5");
         Jugueta CastellPlaymobil = trobaJugueta("CastellPlaymobil");
 
-        DetallProveidor detallA = new DetallProveidor(NintendoNx, 123, 4);
-        DetallProveidor detallB = new DetallProveidor(PlayStation5, 345, 3);
-        DetallProveidor detallC = new DetallProveidor(CastellPlaymobil, 86, 1);
+        DetallProveidor detallA = new DetallProveidor(NintendoNx, 123f, 4);
+        DetallProveidor detallB = new DetallProveidor(PlayStation5, 345f, 3);
+        DetallProveidor detallC = new DetallProveidor(CastellPlaymobil, 86f, 1);
 
         ArrayList<DetallProveidor> detall1 = new ArrayList<>();
         detall1.add(detallA);
@@ -273,9 +273,9 @@ public class Empresa {
         Jugueta playStation5 = trobaJugueta("PlayStation5");
         Jugueta castellPlaymobil = trobaJugueta("CastellPlaymobil");
 
-        DetallFacturaComprador detallA = new DetallFacturaComprador(nintendoNx, 125, 4);
-        DetallFacturaComprador detallB = new DetallFacturaComprador(playStation5, 345, 3);
-        DetallFacturaComprador detallC = new DetallFacturaComprador(castellPlaymobil, 86, 1);
+        DetallFacturaComprador detallA = new DetallFacturaComprador(nintendoNx, 320f, 4);
+        DetallFacturaComprador detallB = new DetallFacturaComprador(playStation5, 540f, 3);
+        DetallFacturaComprador detallC = new DetallFacturaComprador(castellPlaymobil, 125f, 1);
 
         ArrayList<DetallFacturaComprador> detall1 = new ArrayList<>();
         detall1.add(detallA);
