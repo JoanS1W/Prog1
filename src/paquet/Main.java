@@ -11,10 +11,18 @@ public class Main {
 
     public static void main(String[] args) {
 
+        Empresa p = new Empresa();
+
         //Primera consulta
         Date dataNecesaria = new Date(117, 1, 21);
-        Empresa p = new Empresa();
-        System.out.println(p.cercaRegistre("Pere Ramon Vives", dataNecesaria));
+        ArrayList<RegistreComp> llistaCompres = p.cercaRegistre("Pere Ramon Vives", dataNecesaria);
+        if (llistaCompres != null) {
+            for (RegistreComp s : llistaCompres) {
+                System.out.println(s);
+            }
+        } else {
+            System.out.println("No ha comprat cap producte aquest dia.");
+        }
 
         //Segona consulta
         Date dataNecesaria2 = new Date(117, 2, 14);
@@ -22,10 +30,11 @@ public class Main {
 
         //Tercera consulta//Intentar modificar com surt la consulta
         ArrayList<String> llistaPreuProveidor = p.preuJuguetaProveidor("CastellPlaymobil");
+
         if (llistaPreuProveidor != null) {
             for (String s : llistaPreuProveidor) {
                 System.out.println(s);
-            } 
+            }
         } else {
             System.out.println("No tenim cap proveidor que vengui aquesta jugueta");
         }
@@ -40,8 +49,12 @@ public class Main {
 
         //Sisena consulta
         ArrayList<String> llistaJuguetesMarca = p.juguetesMarca("Nintendo");
-        for (int i = 0; i < llistaJuguetesMarca.size(); i++) {
-            System.out.println(llistaJuguetesMarca.get(i));
+        if (llistaJuguetesMarca != null) {
+            for (String s : llistaJuguetesMarca) {
+                System.out.println(s);
+            }
+        } else {
+            System.out.println("No tenim cap jugueta d'aquesta marca");
         }
     }
 }

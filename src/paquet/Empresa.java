@@ -63,18 +63,26 @@ public class Empresa {
     }
 
     //Metode 
-    public RegistreComp cercaRegistre(String nom, Date data) {
+    public ArrayList<RegistreComp> cercaRegistre(String nom, Date data) {
+        boolean trigger = false;
+        
+        ArrayList<RegistreComp> registres = new ArrayList<>();
         int llargaria = compradors.size();
         for (int i = 0; i < llargaria; i++) {
             Comprador comp = compradors.get(i);
             int llargaria2 = comp.getRegistre().size();
             for (int e = 0; e < llargaria2; e++) {
                 if (comp.getNomComprador().equals(nom) && comp.getRegistre().get(e).getDataRegistre().equals(data)) {
-                    return comp.getRegistre().get(e);
+                    trigger = true; 
+                    registres.add(comp.getRegistre().get(e));
                 }
             }
         }
-        return null;
+         if (trigger) {
+            return registres;
+        } else {
+            return null;
+        }
     }
 
     //Metode
@@ -133,15 +141,22 @@ public class Empresa {
     }
 
     public ArrayList<String> juguetesMarca(String nomMarca) {
+        boolean trigger = false;
+        
         ArrayList<String> llistaJuguetes = new ArrayList<>();
         int llargaria = juguetes.size();
         for (int i = 0; i < llargaria; i++) {
             Jugueta jugueta = juguetes.get(i);
             if (jugueta.getMarca().getNomMarca().equals(nomMarca)) {
+                trigger = true;
                 llistaJuguetes.add(jugueta.getNomJugueta());
             }
         }
-        return llistaJuguetes;
+         if (trigger) {
+            return llistaJuguetes;
+        } else {
+            return null;
+        }
     }
 
     //Metode per a trobar els atributs tipus de dins dels arrayList
