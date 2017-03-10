@@ -30,15 +30,15 @@ public class Main {
         System.out.println(p.preuJuguetaProveidor("CastellPlaymobil"));
 
         //Quarta consulta
-        Date dataInici = new Date(117, 2, 1);
+        Date dataInici = new Date(117, 1, 1);
         Date dataFinal = new Date(117, 2, 30);
-        System.out.println(p.facturacioMensual("Mateu Perez Munar", dataInici, dataFinal));
+        System.out.println(p.facturacioMensual("Pere Ramon Vives", dataInici, dataFinal));
 
         //Cinquena consulta
         Date dataSegonaInici = new Date(117, 1, 1);
         Date dataSegonaFinal = new Date(117, 1, 30);
         System.out.println(p.facturacioMesPassat("NintendoNx"));
-
+        p.registreCompArrayList();
         //Sisena consulta
     }
 }

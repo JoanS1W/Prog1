@@ -107,14 +107,14 @@ public class Empresa {
     }
 
     //
-    public float facturacioMensual(String nomComprador, Date data1, Date data2) {
+    public double facturacioMensual(String nomComprador, Date data1, Date data2) {
         float total = 0;
         int llargaria = compradors.size();
         for (int i = 0; i < llargaria; i++) {
             Comprador comp = compradors.get(i);
             int llargaria2 = comp.getRegistre().size();
             for (int e = 0; e < llargaria2; e++) {
-                if (comp.getNomComprador().equals(nomComprador) && (comp.getRegistre().get(e).getDataRegistre().before(data1) && comp.getRegistre().get(e).getDataRegistre().after(data2))) {
+                if (comp.getNomComprador().equals(nomComprador)&& (comp.getRegistre().get(e).getDataRegistre().after(data1) && comp.getRegistre().get(e).getDataRegistre().before(data2))) {
                     return total + comp.getRegistre().get(e).getPreuReg();
                 }
             }
@@ -263,8 +263,8 @@ public class Empresa {
 
     //Metode per omplir l'arrayList registreComp.
     public void registreCompArrayList() {
-        int descompte = 3;
-
+        double descompte = 10;
+      
         Date a = new Date(117, 1, 21);
         Date b = new Date(117, 2, 14);
         Date c = new Date(117, 4, 18);
@@ -286,9 +286,9 @@ public class Empresa {
         ArrayList<DetallFacturaComprador> detall3 = new ArrayList<>();
         detall3.add(detallC);
 
-        RegistreComp registreCompA = new RegistreComp(1, a, descompte, (((100 - descompte) / 100) * (detallA.getPreuJugueta() * detallA.getQuantitat())), detall1);
-        RegistreComp registreCompB = new RegistreComp(2, b, descompte, (((100 - descompte) / 100) * (detallB.getPreuJugueta() * detallB.getQuantitat())), detall2);
-        RegistreComp registreCompC = new RegistreComp(3, c, descompte, (((100 - descompte) / 100) * (detallC.getPreuJugueta() * detallC.getQuantitat())), detall3);
+        RegistreComp registreCompA = new RegistreComp(1, a, descompte, ((100 - descompte) / 100)*((detallA.getPreuJugueta() * detallA.getQuantitat())), detall1);
+        RegistreComp registreCompB = new RegistreComp(2, b, descompte, ((100 - descompte) / 100)*(detallB.getPreuJugueta() * detallB.getQuantitat()), detall2);
+        RegistreComp registreCompC = new RegistreComp(3, c, descompte, ((100 - descompte) / 100)*(detallC.getPreuJugueta() * detallC.getQuantitat()), detall3);
 
         this.registresComp.add(registreCompA);
         this.registresComp.add(registreCompB);

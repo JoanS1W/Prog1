@@ -12,8 +12,8 @@ public class RegistreComp {
     //Atributs
     private int id;
     private Date dataRegistre;
-    private int descompte;
-    private float preuReg;
+    private double descompte;
+    private double preuReg;
     private ArrayList<DetallFacturaComprador> detall;
     
 
@@ -35,19 +35,19 @@ public class RegistreComp {
         this.dataRegistre = dataRegistre;
     }
 
-    public int getDescompte() {
+    public double getDescompte() {
         return descompte;
     }
 
-    public void setDescompte(int descompte) {
+    public void setDescompte(double descompte) {
         this.descompte = descompte;
     }
 
-    public float getPreuReg() {
+    public double getPreuReg() {
         return preuReg;
     }
 
-    public void setPreuReg(float preuReg) {
+    public void setPreuReg(double preuReg) {
         this.preuReg = preuReg;
     }
 
@@ -59,7 +59,7 @@ public class RegistreComp {
         this.detall = detall;
     }
 
-    public RegistreComp(int id, Date dataRegistre, int descompte, float preuReg, ArrayList<DetallFacturaComprador> detall) {
+    public RegistreComp(int id, Date dataRegistre, double descompte, double preuReg, ArrayList<DetallFacturaComprador> detall) {
         this.id = id;
         this.dataRegistre = dataRegistre;
         this.descompte = descompte;
