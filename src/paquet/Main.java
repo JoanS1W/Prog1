@@ -28,7 +28,7 @@ public class Main {
         Date dataNecesaria2 = new Date(117, 2, 14);
         System.out.println(p.tornaNumJuguetesVenudes("PlayStation5", dataNecesaria2));
 
-        //Tercera consulta//Intentar modificar com surt la consulta
+        //Tercera consulta
         ArrayList<String> llistaPreuProveidor = p.preuJuguetaProveidor("CastellPlaymobil");
 
         if (llistaPreuProveidor != null) {
@@ -42,10 +42,10 @@ public class Main {
         //Quarta consulta
         Date dataInici = new Date(117, 1, 1);
         Date dataFinal = new Date(117, 2, 30);
-        System.out.println(p.facturacioMensualClient("Pere Ramon Vives", dataInici, dataFinal)+"€");
+        System.out.println(p.facturacioMensualClient("Pere Ramon Vives", dataInici, dataFinal) + "€");
 
         //Cinquena consulta
-        System.out.println(p.facturacioJuguetaMesPassat("NintendoNx")+"€");
+        System.out.println(p.facturacioJuguetaMesPassat("NintendoNx") + "€");
 
         //Sisena consulta
         ArrayList<String> llistaJuguetesMarca = p.juguetesMarca("Nintendo");

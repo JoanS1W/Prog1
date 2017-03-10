@@ -10,10 +10,13 @@ package paquet;
  * @author Andreu Castell, Joan Serra, Salvador Vicens
  */
 public class DetallFacturaComprador {
+
+    //Atributs
     private Jugueta jugueta;
     private float preuJugueta;
     private int quantitat;
 
+    //Metodes
     public Jugueta getJugueta() {
         return jugueta;
     }
@@ -36,6 +39,5 @@ public class DetallFacturaComprador {
     public String toString() {
         return "DetallFacturaComprador{" + "jugueta=" + jugueta + ", preuJugueta=" + preuJugueta + ", quantitat=" + quantitat + '}';
     }
-    
-    
+
 }

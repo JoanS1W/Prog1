@@ -15,10 +15,8 @@ public class RegistreComp {
     private double descompte;
     private double preuReg;
     private ArrayList<DetallFacturaComprador> detall;
-    
 
     //Metodes
-
     public int getId() {
         return id;
     }
@@ -52,4 +50,4 @@ public class RegistreComp {
         return "RegistreComp{" + "id=" + id + ", dataRegistre=" + dataRegistre + ", descompte=" + descompte + ", preuReg=" + preuReg + ", detall=" + detall + '}';
     }
 
-}  
+}

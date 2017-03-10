@@ -15,7 +15,6 @@ public class RegistreProv {
     private ArrayList<DetallProveidor> detallRegistre;
 
     //Metodes
-    
     public int getId() {
         return id;
     }
@@ -27,7 +26,7 @@ public class RegistreProv {
     public ArrayList getDetallRegistre() {
         return detallRegistre;
     }
-    
+
     @Override
     public String toString() {
         return "RegistreProv{" + "id=" + id + ", dataRegistre=" + dataRegistre + ", detallRegistre=" + detallRegistre + '}';

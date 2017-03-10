@@ -20,9 +20,9 @@ public class Empresa {
     private ArrayList<Comprador> compradors = new ArrayList<>();
     private ArrayList<RegistreProv> registresProv = new ArrayList<>();
     private ArrayList<Proveidor> proveidors = new ArrayList<>();
-    private ArrayList<DetallFacturaComprador> prova = new ArrayList<>();
 
     //Metodes
+    //Constructor que inicialitza tots els metodes per a tenir els ArrayLists amb totes les dades necesaries.
     public Empresa() {
         tipusArrayList();
         contacteArrayList();
@@ -34,10 +34,11 @@ public class Empresa {
         proveidorArrayList();
     }
 
+    //Metode per a obtenir la llista de proveidors que ens venen una jugueta i el seu preu.
     public ArrayList<String> preuJuguetaProveidor(String nomJugueta) {
         ArrayList<String> llistaJuguetaProveidor = new ArrayList<>();
         boolean trigger = false;
-        
+
         int llargaria = proveidors.size();
         for (int e = 0; e < llargaria; e++) {
             Proveidor proveidor = proveidors.get(e);
@@ -59,33 +60,33 @@ public class Empresa {
         } else {
             return null;
         }
-        
+
     }
 
-    //Metode 
-    public ArrayList<RegistreComp> cercaRegistre(String nom, Date data) {
+    //Metode per a obtenir la llista de registres de compra d'un client en una data determinada.
+    public ArrayList<RegistreComp> cercaRegistre(String nomProveidor, Date data) {
         boolean trigger = false;
-        
+
         ArrayList<RegistreComp> registres = new ArrayList<>();
         int llargaria = compradors.size();
         for (int i = 0; i < llargaria; i++) {
             Comprador comp = compradors.get(i);
             int llargaria2 = comp.getRegistre().size();
             for (int e = 0; e < llargaria2; e++) {
-                if (comp.getNomComprador().equals(nom) && comp.getRegistre().get(e).getDataRegistre().equals(data)) {
-                    trigger = true; 
+                if (comp.getNomComprador().equals(nomProveidor) && comp.getRegistre().get(e).getDataRegistre().equals(data)) {
+                    trigger = true;
                     registres.add(comp.getRegistre().get(e));
                 }
             }
         }
-         if (trigger) {
+        if (trigger) {
             return registres;
         } else {
             return null;
         }
     }
 
-    //Metode
+    //Metode per a obtenir la llista de juguetes venudes en una data determinada.
     public String tornaNumJuguetesVenudes(String nomJugueta, Date data) {
         int llargaria = registresComp.size();
         int compres = 0;
@@ -95,14 +96,13 @@ public class Empresa {
             for (int e = 0; e < llargaria2; e++) {
                 if (registre.getDetall().get(e).getJugueta().getNomJugueta().equals(nomJugueta) && registre.getDataRegistre().equals(data)) {
                     compres = compres + registre.getDetall().get(e).getQuantitat();
-                    return "De " + nomJugueta + " s'han comprat " + compres + " unitats";
                 }
             }
         }
-        return "De " + nomJugueta + " no s'han comprat cap unitats";
+        return "De " + nomJugueta + " s'han comprat " + compres + " unitats";
     }
 
-    //
+    //Metode per a obtenir la facturacio d'una determinada jugueta en el mes passat.
     public float facturacioJuguetaMesPassat(String nomJugueta) {
         float facturacio = 0;
         int llargaria = compradors.size();
@@ -118,13 +118,13 @@ public class Empresa {
                 if (comp.getRegistre().get(i).getDataRegistre().after(data) && comp.getRegistre().get(i).getDataRegistre().before(data2) && comp.getRegistre().get(i).getDetall().get(e).getJugueta().getNomJugueta().equals(nomJugueta)) {
                     float suma = (comp.getRegistre().get(i).getDetall().get(e).getPreuJugueta() * comp.getRegistre().get(i).getDetall().get(e).getQuantitat());
                     return facturacio + suma;
-                }
-            }
+                }//Aquest return hauria d'estar fora del for per que aixi s'atura quan es troba amb el primer element
+            }//i per tant no suma els elements següents, pero ens dona error i no trobam manera d'arreglar-ho, aixi que el deixam aixi.
         }
         return 0;
     }
 
-    //
+    //Metode per a obtenir la facturacio d'un determinat client en el mes actual.
     public double facturacioMensualClient(String nomComprador, Date data1, Date data2) {
         float total = 0;
         int llargaria = compradors.size();
@@ -134,15 +134,16 @@ public class Empresa {
             for (int e = 0; e < llargaria2; e++) {
                 if (comp.getNomComprador().equals(nomComprador) && (comp.getRegistre().get(e).getDataRegistre().after(data1) && comp.getRegistre().get(e).getDataRegistre().before(data2))) {
                     return total + comp.getRegistre().get(e).getPreuReg();
-                }
-            }
+                }//Aquest return hauria d'estar fora del for per que aixi s'atura quan es troba amb el primer element
+            }//i per tant no suma els elements següents, pero ens dona error i no trobam manera d'arreglar-ho, aixi que el deixam aixi.
         }
         return 0;
     }
 
+    //Metode per a obtenir la llista de juguetes d'una determianda marca.
     public ArrayList<String> juguetesMarca(String nomMarca) {
         boolean trigger = false;
-        
+
         ArrayList<String> llistaJuguetes = new ArrayList<>();
         int llargaria = juguetes.size();
         for (int i = 0; i < llargaria; i++) {
@@ -152,7 +153,7 @@ public class Empresa {
                 llistaJuguetes.add(jugueta.getNomJugueta());
             }
         }
-         if (trigger) {
+        if (trigger) {
             return llistaJuguetes;
         } else {
             return null;
@@ -267,18 +268,18 @@ public class Empresa {
     }
 
     //Metode per omplir l'arrayList registreProv.
-    public void registreProvArrayList() {
+    private void registreProvArrayList() {
         Date a = new Date(117, 6, 24);
         Date b = new Date(117, 8, 15);
         Date c = new Date(117, 4, 18);
 
-        Jugueta NintendoNx = trobaJugueta("NintendoNx");
-        Jugueta PlayStation5 = trobaJugueta("PlayStation5");
-        Jugueta CastellPlaymobil = trobaJugueta("CastellPlaymobil");
+        Jugueta nintendoNx = trobaJugueta("NintendoNx");
+        Jugueta playStation5 = trobaJugueta("PlayStation5");
+        Jugueta castellPlaymobil = trobaJugueta("CastellPlaymobil");
 
-        DetallProveidor detallA = new DetallProveidor(NintendoNx, 123f, 4);
-        DetallProveidor detallB = new DetallProveidor(PlayStation5, 345f, 3);
-        DetallProveidor detallC = new DetallProveidor(CastellPlaymobil, 86f, 1);
+        DetallProveidor detallA = new DetallProveidor(nintendoNx, 123f, 4);
+        DetallProveidor detallB = new DetallProveidor(playStation5, 345f, 3);
+        DetallProveidor detallC = new DetallProveidor(castellPlaymobil, 86f, 1);
 
         ArrayList<DetallProveidor> detall1 = new ArrayList<>();
         detall1.add(detallA);
@@ -299,12 +300,12 @@ public class Empresa {
     }
 
     //Metode per omplir l'arrayList registreComp.
-    public void registreCompArrayList() {
+    private void registreCompArrayList() {
         double descompte = 10;
 
-        Date a = new Date(117, 1, 21);
-        Date b = new Date(117, 2, 14);
-        Date c = new Date(117, 4, 18);
+        Date dataA = new Date(117, 1, 21);
+        Date dataB = new Date(117, 2, 14);
+        Date dataC = new Date(117, 4, 18);
 
         Jugueta nintendoNx = trobaJugueta("NintendoNx");
         Jugueta playStation5 = trobaJugueta("PlayStation5");
@@ -323,9 +324,9 @@ public class Empresa {
         ArrayList<DetallFacturaComprador> detall3 = new ArrayList<>();
         detall3.add(detallC);
 
-        RegistreComp registreCompA = new RegistreComp(1, a, descompte, ((100 - descompte) / 100) * ((detallA.getPreuJugueta() * detallA.getQuantitat())), detall1);
-        RegistreComp registreCompB = new RegistreComp(2, b, descompte, ((100 - descompte) / 100) * (detallB.getPreuJugueta() * detallB.getQuantitat()), detall2);
-        RegistreComp registreCompC = new RegistreComp(3, c, descompte, ((100 - descompte) / 100) * (detallC.getPreuJugueta() * detallC.getQuantitat()), detall3);
+        RegistreComp registreCompA = new RegistreComp(1, dataA, descompte, ((100 - descompte) / 100) * ((detallA.getPreuJugueta() * detallA.getQuantitat())), detall1);
+        RegistreComp registreCompB = new RegistreComp(2, dataB, descompte, ((100 - descompte) / 100) * (detallB.getPreuJugueta() * detallB.getQuantitat()), detall2);
+        RegistreComp registreCompC = new RegistreComp(3, dataC, descompte, ((100 - descompte) / 100) * (detallC.getPreuJugueta() * detallC.getQuantitat()), detall3);
 
         this.registresComp.add(registreCompA);
         this.registresComp.add(registreCompB);
@@ -333,7 +334,7 @@ public class Empresa {
     }
 
     //Metode per omplir l'arrayList marca.
-    public void marcaArrayList() {
+    private void marcaArrayList() {
         Contacte marca1 = trobaContacte("m1");
         Contacte marca2 = trobaContacte("m2");
         Contacte marca3 = trobaContacte("m3");
@@ -348,7 +349,7 @@ public class Empresa {
     }
 
     //Metode per omplir l'arrayList jugueta.
-    public void juguetaArrayList() {
+    private void juguetaArrayList() {
         Marca nintendo = trobaMarca("Nintendo");
         Marca playmobil = trobaMarca("Playmobil");
         Marca playstation = trobaMarca("Playstation");
@@ -367,7 +368,7 @@ public class Empresa {
     }
 
     //Metode per omplir l'arrayList contacte.
-    public void contacteArrayList() {
+    private void contacteArrayList() {
         Contacte marca1 = new Contacte("m1", "971548798", "qweq@gmail.com", "07140", "C/ Jardi, 24");
         Contacte marca2 = new Contacte("m2", "971784565", "gdfd@gmail.com", "07142", "C/ Mateu, 12");
         Contacte marca3 = new Contacte("m3", "971013599", "jhgjg@gmail.com", "07113", "C/ Plaça, 48");
@@ -390,7 +391,7 @@ public class Empresa {
     }
 
     //Metode per omplir l'arrayList comprador.
-    public void compradorArrayList() {
+    private void compradorArrayList() {
         RegistreComp registreCompA = trobaRegistreComp(1);
         RegistreComp registreCompB = trobaRegistreComp(2);
         RegistreComp registreCompC = trobaRegistreComp(3);
@@ -416,7 +417,7 @@ public class Empresa {
     }
 
     //Metode per omplir l'arrayList proveidor.
-    public void proveidorArrayList() {
+    private void proveidorArrayList() {
         RegistreProv registreProvA = trobaRegistreProv(1);
         RegistreProv registreProvB = trobaRegistreProv(2);
         RegistreProv registreProvC = trobaRegistreProv(3);

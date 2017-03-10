@@ -16,31 +16,25 @@ public class Proveidor {
     private ArrayList<DetallProveidor> juguetes;
 
     //Metodes
-
     public String getNomProveidor() {
         return nomProveidor;
     }
-
 
     public Marca getMarca() {
         return marca;
     }
 
-
     public Contacte getContacte() {
         return contacte;
     }
-
 
     public RegistreProv getRegistre() {
         return registre;
     }
 
-
     public ArrayList<DetallProveidor> getJuguetes() {
         return juguetes;
     }
-
 
     public Proveidor(String nomProveidor, Marca marca, Contacte contacte, RegistreProv registre, ArrayList<DetallProveidor> juguetes) {
         this.nomProveidor = nomProveidor;
