@@ -9,13 +9,6 @@ import java.util.Date;
  */
 public class Main {
 
-    //Metodes per a fer proves amb les classes:
-    //Classificació es una enumeració, no fa falta fer proves.
-    //Comprador:
-    /*public void provaComprador() {
-        Comprador prova = new Comprador("NomComprador", registre, contacte);
-        
-    }*/
     public static void main(String[] args) {
 
         //Primera consulta
@@ -37,9 +30,9 @@ public class Main {
 
         //Cinquena consulta
         System.out.println(p.facturacioJuguetaMesPassat("NintendoNx"));
+        
         //Sisena consulta
-        ArrayList<String> llistaJuguetesMarca = new ArrayList<>();
-        llistaJuguetesMarca = p.juguetesMarca("Nintendo");
+        ArrayList<String> llistaJuguetesMarca = p.juguetesMarca("Nintendo");
         for (int i = 0; i < llistaJuguetesMarca.size(); i++) {
             System.out.println(llistaJuguetesMarca.get(i));
         }

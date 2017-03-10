@@ -58,7 +58,7 @@ public class Empresa {
         for (int i = 0; i < llargaria; i++) {
             Comprador comp = compradors.get(i);
             int llargaria2 = comp.getRegistre().size();
-            for (int e = 0; e < llargaria2; e++) {//                       Aquesta i d'aqui baix no hauria de ser una e? Segueix sense funcionar tho
+            for (int e = 0; e < llargaria2; e++) {
                 if (comp.getNomComprador().equals(nom) && comp.getRegistre().get(e).getDataRegistre().equals(data)) {
                     return comp.getRegistre().get(e);
                 }
@@ -135,7 +135,7 @@ public class Empresa {
     }
 
     //Metode per a trobar els atributs tipus de dins dels arrayList
-    public Tipus trobaTipus(String nom) {
+    private Tipus trobaTipus(String nom) {
         int llargaria = tipus.size();
         for (int i = 0; i < llargaria; i++) {
             Tipus tip = tipus.get(i);
@@ -147,7 +147,7 @@ public class Empresa {
     }
 
     //Metode per a trobar els atributs registreProv de dins dels arrayList
-    public RegistreProv trobaRegistreProv(int id) {
+    private RegistreProv trobaRegistreProv(int id) {
         int llargaria = registresProv.size();
         for (int i = 0; i < llargaria; i++) {
             RegistreProv regPro = registresProv.get(i);
@@ -159,7 +159,7 @@ public class Empresa {
     }
 
     //Metode per a trobar els atributs registreComp de dins dels arrayList
-    public RegistreComp trobaRegistreComp(int id) {
+    private RegistreComp trobaRegistreComp(int id) {
         int llargaria = registresComp.size();
         for (int i = 0; i < llargaria; i++) {
             RegistreComp regComp = registresComp.get(i);
@@ -171,7 +171,7 @@ public class Empresa {
     }
 
     //Metode per a trobar els atributs marca de dins dels arrayList
-    public Marca trobaMarca(String nom) {
+    private Marca trobaMarca(String nom) {
         int llargaria = marques.size();
         for (int i = 0; i < llargaria; i++) {
             Marca mar = marques.get(i);
@@ -183,7 +183,7 @@ public class Empresa {
     }
 
     //Metode per a trobar els atributs jugueta de dins dels arrayList
-    public Jugueta trobaJugueta(String nomJugueta) {
+    private Jugueta trobaJugueta(String nomJugueta) {
         int llargaria = juguetes.size();
         for (int i = 0; i < llargaria; i++) {
             Jugueta jug = juguetes.get(i);
@@ -195,7 +195,7 @@ public class Empresa {
     }
 
     //Metode per a trobar els atributs contacte de dins dels arrayList
-    public Contacte trobaContacte(String nom) {
+    private Contacte trobaContacte(String nom) {
         int llargaria = contactes.size();
         for (int i = 0; i < llargaria; i++) {
             Contacte cont = contactes.get(i);
@@ -207,7 +207,7 @@ public class Empresa {
     }
 
     //Metode per a trobar els atributs comprador de dins dels arrayList
-    public Comprador trobaComprador(String nom) {
+    private Comprador trobaComprador(String nom) {
         int llargaria = compradors.size();
         for (int i = 0; i < llargaria; i++) {
             Comprador comp = compradors.get(i);
@@ -219,7 +219,7 @@ public class Empresa {
     }
 
     //Metode per a trobar els atributs proveidor de dins dels arrayList
-    public Proveidor trobaProveidor(String nom) {
+    private Proveidor trobaProveidor(String nom) {
         int llargaria = proveidors.size();
         for (int i = 0; i < llargaria; i++) {
             Proveidor prov = proveidors.get(i);
@@ -231,7 +231,7 @@ public class Empresa {
     }
 
     //Metode per omplir l'arrayList tipus.
-    public void tipusArrayList() {
+    private void tipusArrayList() {
         Tipus consola = new Tipus("Consola");
         Tipus construir = new Tipus("Construir");
         Tipus trencaclosques = new Tipus("Trencaclosques");

@@ -23,40 +23,20 @@ public class RegistreComp {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
     public Date getDataRegistre() {
         return dataRegistre;
-    }
-
-    public void setDataRegistre(Date dataRegistre) {
-        this.dataRegistre = dataRegistre;
     }
 
     public double getDescompte() {
         return descompte;
     }
 
-    public void setDescompte(double descompte) {
-        this.descompte = descompte;
-    }
-
     public double getPreuReg() {
         return preuReg;
     }
 
-    public void setPreuReg(double preuReg) {
-        this.preuReg = preuReg;
-    }
-
     public ArrayList<DetallFacturaComprador> getDetall() {
         return detall;
-    }
-
-    public void setDetall(ArrayList<DetallFacturaComprador> detall) {
-        this.detall = detall;
     }
 
     public RegistreComp(int id, Date dataRegistre, double descompte, double preuReg, ArrayList<DetallFacturaComprador> detall) {
@@ -71,7 +51,5 @@ public class RegistreComp {
     public String toString() {
         return "RegistreComp{" + "id=" + id + ", dataRegistre=" + dataRegistre + ", descompte=" + descompte + ", preuReg=" + preuReg + ", detall=" + detall + '}';
     }
-
-
 
 }  
