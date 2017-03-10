@@ -21,7 +21,14 @@ public class Main {
         System.out.println(p.tornaNumJuguetesVenudes("PlayStation5", dataNecesaria2));
 
         //Tercera consulta//Intentar modificar com surt la consulta
-        System.out.println(p.preuJuguetaProveidor("CastellPlaymobil"));
+        ArrayList<String> llistaPreuProveidor = p.preuJuguetaProveidor("CastellPlaymobil");
+        if (llistaPreuProveidor != null) {
+            for (String s : llistaPreuProveidor) {
+                System.out.println(s);
+            } 
+        } else {
+            System.out.println("No tenim cap proveidor que vengui aquesta jugueta");
+        }
 
         //Quarta consulta
         Date dataInici = new Date(117, 1, 1);
@@ -30,7 +37,7 @@ public class Main {
 
         //Cinquena consulta
         System.out.println(p.facturacioJuguetaMesPassat("NintendoNx"));
-        
+
         //Sisena consulta
         ArrayList<String> llistaJuguetesMarca = p.juguetesMarca("Nintendo");
         for (int i = 0; i < llistaJuguetesMarca.size(); i++) {

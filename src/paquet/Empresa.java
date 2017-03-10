@@ -34,7 +34,10 @@ public class Empresa {
         proveidorArrayList();
     }
 
-    public String preuJuguetaProveidor(String nomJugueta) {
+    public ArrayList<String> preuJuguetaProveidor(String nomJugueta) {
+        ArrayList<String> llistaJuguetaProveidor = new ArrayList<>();
+        boolean trigger = false;
+        
         int llargaria = proveidors.size();
         for (int e = 0; e < llargaria; e++) {
             Proveidor proveidor = proveidors.get(e);
@@ -42,14 +45,21 @@ public class Empresa {
             for (int i = 0; i < llargaria2; i++) {
                 if (proveidor.getJuguetes().get(i).getJugueta().getNomJugueta().equals(nomJugueta)) {
                     if (proveidor.getJuguetes().get(i).getPreu() == 0) {
-                        return "El proveidor " + proveidor.getNomProveidor() + " | Preu: no definit";
+                        trigger = true;
+                        llistaJuguetaProveidor.add("El proveidor " + proveidor.getNomProveidor() + " | Preu: no definit");
                     } else {
-                        return "El proveidor " + proveidor.getNomProveidor() + " | Preu:" + proveidor.getJuguetes().get(i).getPreu() + "€";
+                        trigger = true;
+                        llistaJuguetaProveidor.add("El proveidor " + proveidor.getNomProveidor() + " | Preu:" + proveidor.getJuguetes().get(i).getPreu() + "€");
                     }
                 }
             }
         }
-        return "No hi ha ningú que disposi del producte.";
+        if (trigger) {
+            return llistaJuguetaProveidor;
+        } else {
+            return null;
+        }
+        
     }
 
     //Metode 
@@ -114,20 +124,20 @@ public class Empresa {
             Comprador comp = compradors.get(i);
             int llargaria2 = comp.getRegistre().size();
             for (int e = 0; e < llargaria2; e++) {
-                if (comp.getNomComprador().equals(nomComprador)&& (comp.getRegistre().get(e).getDataRegistre().after(data1) && comp.getRegistre().get(e).getDataRegistre().before(data2))) {
+                if (comp.getNomComprador().equals(nomComprador) && (comp.getRegistre().get(e).getDataRegistre().after(data1) && comp.getRegistre().get(e).getDataRegistre().before(data2))) {
                     return total + comp.getRegistre().get(e).getPreuReg();
                 }
             }
         }
         return 0;
     }
-    
-    public ArrayList<String> juguetesMarca(String nomMarca){
+
+    public ArrayList<String> juguetesMarca(String nomMarca) {
         ArrayList<String> llistaJuguetes = new ArrayList<>();
         int llargaria = juguetes.size();
         for (int i = 0; i < llargaria; i++) {
             Jugueta jugueta = juguetes.get(i);
-            if(jugueta.getMarca().getNomMarca().equals(nomMarca)){
+            if (jugueta.getMarca().getNomMarca().equals(nomMarca)) {
                 llistaJuguetes.add(jugueta.getNomJugueta());
             }
         }
@@ -276,7 +286,7 @@ public class Empresa {
     //Metode per omplir l'arrayList registreComp.
     public void registreCompArrayList() {
         double descompte = 10;
-      
+
         Date a = new Date(117, 1, 21);
         Date b = new Date(117, 2, 14);
         Date c = new Date(117, 4, 18);
@@ -298,9 +308,9 @@ public class Empresa {
         ArrayList<DetallFacturaComprador> detall3 = new ArrayList<>();
         detall3.add(detallC);
 
-        RegistreComp registreCompA = new RegistreComp(1, a, descompte, ((100 - descompte) / 100)*((detallA.getPreuJugueta() * detallA.getQuantitat())), detall1);
-        RegistreComp registreCompB = new RegistreComp(2, b, descompte, ((100 - descompte) / 100)*(detallB.getPreuJugueta() * detallB.getQuantitat()), detall2);
-        RegistreComp registreCompC = new RegistreComp(3, c, descompte, ((100 - descompte) / 100)*(detallC.getPreuJugueta() * detallC.getQuantitat()), detall3);
+        RegistreComp registreCompA = new RegistreComp(1, a, descompte, ((100 - descompte) / 100) * ((detallA.getPreuJugueta() * detallA.getQuantitat())), detall1);
+        RegistreComp registreCompB = new RegistreComp(2, b, descompte, ((100 - descompte) / 100) * (detallB.getPreuJugueta() * detallB.getQuantitat()), detall2);
+        RegistreComp registreCompC = new RegistreComp(3, c, descompte, ((100 - descompte) / 100) * (detallC.getPreuJugueta() * detallC.getQuantitat()), detall3);
 
         this.registresComp.add(registreCompA);
         this.registresComp.add(registreCompB);
